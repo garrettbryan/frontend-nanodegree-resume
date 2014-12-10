@@ -2,7 +2,7 @@
 var bio = {
   "name": "Garrett Bryan",
   "role": "Web Developer",
-  "contact": {
+  "contacts": {
     "mobile":"323-459-3964",
     "email":"garrettdavisbryan@gmail.com",
     "github":"https://github.com/garrettbryan",
@@ -18,7 +18,7 @@ var education = {
   "schools": [
     {
       "name": "UCLA",
-      "location": "Los Angeles",
+      "location": "Los Angeles, CA",
       "degree": "drop-out",
       "majors": ["Material Science"],
       "dates": "Fall 2010 - Spring 2011",
@@ -26,7 +26,7 @@ var education = {
     },
     {
       "name": "Los Angeles City College",
-      "location": "Los Angeles",
+      "location": "Los Angeles, CA",
       "degree": "Transfer Student",
       "majors": ["Material Science"],
       "dates": "omg",
@@ -34,7 +34,7 @@ var education = {
     },
     {
       "name": "Los Angeles Valley College",
-      "location": "Valley Glen",
+      "location": "Valley Glen, CA",
       "degree": "Transfer Student",
       "majors": ["Material Science", "Cinema"],
       "dates": "omg",
@@ -70,7 +70,7 @@ var work = {
     {
       "employer": "Los Angeles Valley College",
       "title": "Math Tutor",
-      "location": "Valley Glen",
+      "location": "Valley Glen, CA",
       "dates": "2007",
       "description": "2+2=4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
@@ -82,6 +82,12 @@ var projects = {
     {
       "title": "my life",
       "dates": "June 27, 1980 - sometime in the future",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": []
+    },
+    {
+      "title": "my life v2",
+      "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": []
     }
@@ -110,7 +116,7 @@ $("#main").append(internationalizeButton);
 
 
 function inName(name){
-  var lowerName = name.toLowerCase();
+  var lowerName = name.trim().toLowerCase();
   var nameArray = lowerName.split(" ");
   return nameArray[0][0].toUpperCase() + nameArray[0].slice(1) + " " +
     nameArray[1].toUpperCase();
@@ -124,6 +130,20 @@ function locationizer(work) {
   return workLocations;
 }
 
+projects.display = function(){
+  for (var project in projects.projects){
+    $("#projects").append(HTMLprojectStart);
+    $(".project-entry:last").append(
+      HTMLprojectTitle.replace("%data%",projects.projects[project].title)+
+      HTMLprojectDates.replace("%data%",projects.projects[project].dates)+
+      HTMLprojectDescription.replace("%data%",projects.projects[project].description)
+      );
+
+//      HTMLprojectImage.replace("%data%",projects.projects[project]
+  }
+}
+
+projects.display();
 
 displayWork();
 
@@ -143,6 +163,8 @@ function displayWork(){
 $(document).click(function(loc) {
   logClicks(loc.pageX,loc.pageY);
 });
+
+$("#mapDiv").append(googleMap);
 
 /*
 var work = {};
