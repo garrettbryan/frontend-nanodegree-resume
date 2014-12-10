@@ -97,7 +97,11 @@ if (bio.skills.length > 0){
 }
 
 for (job in work.jobs){
-
+  $("#workExperience").append(HTMLworkStart);
+  $("#workExperience:last").append(
+    HTMLworkEmployer.replace("%data%", work.jobs[job].employer)+
+    HTMLworkTitle.replace("%data%", work.jobs[job].title)
+    );
 }
 
 /*
