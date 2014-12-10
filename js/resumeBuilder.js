@@ -72,7 +72,7 @@ var work = {
       "title": "Math Tutor",
       "location": "Valley Glen",
       "dates": "2007",
-      "description": ""
+      "description": "2+2=4"
     }
   ]
 };
@@ -88,23 +88,6 @@ var projects = {
   ]
 };
 
-
-if (bio.skills.length > 0){
-  $("#header").append(HTMLskillsStart);
-  bio.skills.forEach(function(entry) {
-    $("#skills").append(HTMLskills.replace("%data%", entry));
-  });
-}
-
-for (job in work.jobs){
-  $("#workExperience").append(HTMLworkStart);
-  $("#workExperience:last").append(
-    HTMLworkEmployer.replace("%data%", work.jobs[job].employer)+
-    HTMLworkTitle.replace("%data%", work.jobs[job].title)
-    );
-}
-
-/*
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contact);
@@ -116,6 +99,24 @@ $("#header").prepend(formattedWelcome);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+if (bio.skills.length > 0){
+  $("#header").append(HTMLskillsStart);
+  bio.skills.forEach(function(entry) {
+    $("#skills").append(HTMLskills.replace("%data%", entry));
+  });
+}
+
+for (job in work.jobs){
+  $("#workExperience").append(HTMLworkStart);
+  $(".work-entry:last").append(
+    HTMLworkEmployer.replace("%data%", work.jobs[job].employer)+
+    HTMLworkTitle.replace("%data%", work.jobs[job].title)
+    );
+}
+
+
+
+/*
 var work = {};
 work.position = "Stay-At-Home-Dad";
 work.employer = "Wife";
