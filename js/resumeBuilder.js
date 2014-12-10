@@ -58,21 +58,21 @@ var work = {
       "title": "Digital IO Operator",
       "location": "Burbank, CA",
       "dates": "July 2006 to November 2013",
-      "description": "Writing a lot of perl scripts."
+      "description": "Writing a lot of perl scripts. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "employer": "Fotokem",
       "title": "Weekend Film Dailies Scheduler",
       "location": "Burbank, CA",
       "dates": "June 2005 to July 2006",
-      "description": "Schedule Film Processing"
+      "description": "Schedule Film Processing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "employer": "Los Angeles Valley College",
       "title": "Math Tutor",
       "location": "Valley Glen",
       "dates": "2007",
-      "description": "2+2=4"
+      "description": "2+2=4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ]
 };
@@ -110,7 +110,10 @@ for (job in work.jobs){
   $("#workExperience").append(HTMLworkStart);
   $(".work-entry:last").append(
     HTMLworkEmployer.replace("%data%", work.jobs[job].employer)+
-    HTMLworkTitle.replace("%data%", work.jobs[job].title)
+    HTMLworkTitle.replace("%data%", work.jobs[job].title)+
+    HTMLworkLocation.replace("%data%", work.jobs[job].location)+
+    HTMLworkDates.replace("%data%", work.jobs[job].dates)+
+    HTMLworkDescription.replace("%data%", work.jobs[job].description)
     );
 }
 
