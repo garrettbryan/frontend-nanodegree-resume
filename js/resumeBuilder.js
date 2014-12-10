@@ -94,16 +94,12 @@ var projects = {
   ]
 };
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact);
-var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
-$("#header").prepend(formattedPic);
-$("#header").prepend(formattedWelcome);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+
+$("#header").prepend(HTMLbioPic.replace("%data%", bio.bioPic));
+$("#header").prepend(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
 if (bio.skills.length > 0){
   $("#header").append(HTMLskillsStart);
@@ -112,23 +108,9 @@ if (bio.skills.length > 0){
   });
 }
 
-$("#main").append(internationalizeButton);
 
 
-function inName(name){
-  var lowerName = name.trim().toLowerCase();
-  var nameArray = lowerName.split(" ");
-  return nameArray[0][0].toUpperCase() + nameArray[0].slice(1) + " " +
-    nameArray[1].toUpperCase();
-}
 
-function locationizer(work) {
-  var workLocations = [];
-  for (var job in work.jobs){
-    workLocations.push(work.jobs[job].location);
-  }
-  return workLocations;
-}
 
 projects.display = function(){
   for (var project in projects.projects){
@@ -158,6 +140,29 @@ function displayWork(){
       HTMLworkDescription.replace("%data%", work.jobs[job].description)
       );
   }
+}
+
+displayEducation();
+
+function displayEducation(){
+  for (school in education.schools){
+    $("#education").append(HTMLschoolStart);
+    $(".education-entry:last").append(
+      HTMLschoolName.replace("%data%", education.schools[school].name)+
+      HTMLschoolDegree.replace("%data%", education.schools[school].degree)+
+      HTMLschoolDates.replace("%data%", education.schools[school].dates)+
+      HTMLschoolLocation.replace("%data%", education.schools[school].location)+
+      HTMLschoolMajor.replace("%data%", education.schools[school].major)
+      );
+  }
+}
+
+function locationizer(work) {
+  var workLocations = [];
+  for (var job in work.jobs){
+    workLocations.push(work.jobs[job].location);
+  }
+  return workLocations;
 }
 
 $(document).click(function(loc) {
