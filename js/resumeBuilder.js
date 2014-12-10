@@ -89,6 +89,18 @@ var projects = {
 };
 
 
+if (bio.skills.length > 0){
+  $("#header").append(HTMLskillsStart);
+  bio.skills.forEach(function(entry) {
+    $("#skills").append(HTMLskills.replace("%data%", entry));
+  });
+}
+
+for (job in work.jobs){
+
+}
+
+/*
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contact);
@@ -120,4 +132,5 @@ $("#main").append(ed.name);
 
 
 
-$("#topContacts").prepend(formattedMobile);
+$("#topContacts").prepend(formattedMobile
+*/
