@@ -106,6 +106,15 @@ if (bio.skills.length > 0){
   });
 }
 
+function locationizer(work) {
+  var workLocations = [];
+  for (var job in work.jobs){
+    workLocations.push(work.jobs[job].location);
+  }
+  return workLocations;
+}
+
+
 displayWork();
 
 function displayWork(){
