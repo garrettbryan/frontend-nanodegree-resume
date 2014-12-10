@@ -11,7 +11,7 @@ var bio = {
   },
   "bioPic": "images/garrettrockclimbing300x300.jpg",
   "welcomeMessage": "Hi, nice to meet you.",
-  "skills": ["surfing", "snowboarding", "etc"]
+  "skills": ["surfing", "snowboarding", "etc", "some more things", "another awesome thing"]
 };
 
 var education = {
@@ -96,10 +96,21 @@ var projects = {
 
 
 
-$("#header").prepend(HTMLbioPic.replace("%data%", bio.bioPic));
-$("#header").prepend(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
+
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+displayContacts();
+
+$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+$("#header").append(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
+
+function displayContacts(){
+  for (var method in bio.contacts){
+    console.log(bio.contacts[method]);
+    $("#topContacts").append(HTMLcontactGeneric.replace("%data%",bio.contacts[method]).replace("%contact%",method));
+  }
+}
+
 
 if (bio.skills.length > 0){
   $("#header").append(HTMLskillsStart);
