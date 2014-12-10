@@ -106,6 +106,16 @@ if (bio.skills.length > 0){
   });
 }
 
+$("#main").append(internationalizeButton);
+
+
+function inName(name){
+  var lowerName = name.toLowerCase();
+  var nameArray = lowerName.split(" ");
+  return nameArray[0][0].toUpperCase() + nameArray[0].slice(1) + " " +
+    nameArray[1].toUpperCase();
+}
+
 function locationizer(work) {
   var workLocations = [];
   for (var job in work.jobs){
