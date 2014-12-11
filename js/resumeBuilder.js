@@ -10,7 +10,7 @@ var bio = {
     "location":"Raleigh, NC"
   },
   "bioPic": "images/garrettrockclimbing300x300.jpg",
-  "welcomeMessage": "Hi, nice to meet you.",
+  "welcomeMessage": "Hi, nice to meet you. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "skills": ["surfing", "snowboarding", "etc", "some more things", "another awesome thing"]
 };
 
@@ -163,7 +163,7 @@ function displayEducation(){
       HTMLschoolDegree.replace("%data%", education.schools[school].degree)+
       HTMLschoolDates.replace("%data%", education.schools[school].dates)+
       HTMLschoolLocation.replace("%data%", education.schools[school].location)+
-      HTMLschoolMajor.replace("%data%", education.schools[school].major)
+      HTMLschoolMajor.replace("%data%", education.schools[school].majors)
       );
   }
 }
@@ -182,26 +182,3 @@ $(document).click(function(loc) {
 
 $("#mapDiv").append(googleMap);
 
-/*
-var work = {};
-work.position = "Stay-At-Home-Dad";
-work.employer = "Wife";
-work.years = 0.5;
-work.city = "Raleigh";
-
-var fPosition =
-
-$("#main").append(work["position"]);
-
-
-
-ed["name"] = "UCLA";
-ed["years"] = [2010,2011];
-ed["city"] = "Los Angeles";
-
-$("#main").append(ed.name);
-
-
-
-$("#topContacts").prepend(formattedMobile
-*/
