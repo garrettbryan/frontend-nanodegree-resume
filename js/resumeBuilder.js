@@ -83,13 +83,28 @@ var projects = {
       "title": "my life",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": []
+      "images": ["images/197x148.gif" ]
     },
     {
       "title": "my life v2",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": []
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+    },
+    {
+      "title": "Hole Tracer",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "Let's say you want a pipe to intersect another pipe at a precise position,\
+      with a certain offset and angle. How does the hole change as it is applied to different \
+      surfaces? This web app allows you to print out that trace tape it to the surface so you can\
+      cut that precise hole.",
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+    },
+    {
+      "title": "my life v2",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
     }
   ]
 };
@@ -131,8 +146,11 @@ projects.display = function(){
       HTMLprojectDates.replace("%data%",projects.projects[project].dates)+
       HTMLprojectDescription.replace("%data%",projects.projects[project].description)
       );
-
-//      HTMLprojectImage.replace("%data%",projects.projects[project]
+    for (var i = 0; i < projects.projects[project].images.length; i++){
+      $(".project-entry:last").append(
+        HTMLprojectImage.replace("%data%",projects.projects[project].images[i])
+      );
+    }
   }
 }
 
