@@ -83,25 +83,63 @@ var projects = {
       "title": "3D House Scan Parser",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Have you ever had to extract a floorplan from the scan of a house? Well I did.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+      "images": [
+      "images/project_images/3D_model_parsing/3D_model_parsing1.jpg",
+      "images/project_images/3D_model_parsing/3D_model_parsing2.jpg",
+      "images/project_images/3D_model_parsing/3D_model_parsing3.jpg",
+      "images/project_images/3D_model_parsing/3D_model_parsing4.jpg",
+      "images/project_images/3D_model_parsing/3D_model_parsing5.jpg"
+      ]
     },
     {
-      "title": "RepRap Mendel 3D Printer",
+      "title": "RepRap Mendel",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+      "images": [
+        "images/project_images/reprap_mendel/reprap_mendel1.jpg" ,
+        "images/project_images/reprap_mendel/reprap_mendel2.jpg" ,
+        "images/project_images/reprap_mendel/reprap_mendel3.jpg"
+      ]
     },
     {
       "title": "Slip Cast Crucibles",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": ["images/197x148.gif" ]
+      "images": [
+        "images/project_images/slip_cast/slip_cast1.jpg",
+        "images/project_images/slip_cast/slip_cast2.jpg",
+        "images/project_images/slip_cast/slip_cast3.jpg",
+        "images/project_images/slip_cast/slip_cast4.jpg",
+        "images/project_images/slip_cast/slip_cast5.jpg",
+        "images/project_images/slip_cast/slip_cast6.jpg",
+        "images/project_images/slip_cast/slip_cast7.jpg",
+        "images/project_images/slip_cast/slip_cast8.jpg",
+        "images/project_images/slip_cast/slip_cast9.jpg",
+      ]
     },
     {
       "title": "Small Nonferrous Foundry",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+      "images": [
+        "images/project_images/investment_casting/investment_casting01.jpg",
+        "images/project_images/investment_casting/investment_casting02.jpg",
+        "images/project_images/investment_casting/investment_casting03.jpg",
+        "images/project_images/investment_casting/investment_casting04.jpg",
+        "images/project_images/investment_casting/investment_casting05.jpg",
+        "images/project_images/investment_casting/investment_casting06.jpg",
+        "images/project_images/investment_casting/investment_casting07.jpg",
+        "images/project_images/investment_casting/investment_casting08.jpg",
+        "images/project_images/investment_casting/investment_casting09.jpg",
+        "images/project_images/investment_casting/investment_casting10.jpg",
+        "images/project_images/investment_casting/investment_casting11.jpg",
+        "images/project_images/investment_casting/investment_casting12.jpg",
+        "images/project_images/investment_casting/investment_casting13.jpg",
+        "images/project_images/investment_casting/investment_casting14.jpg",
+        "images/project_images/investment_casting/investment_casting15.jpg",
+        "images/project_images/investment_casting/investment_casting16.jpg",
+        "images/project_images/investment_casting/investment_casting17.jpg"
+      ]
     },
     {
       "title": "Hole Tracer",
@@ -113,22 +151,211 @@ var projects = {
       "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
     },
     {
+      "title": "Matchplate Pneumatic Vibrator",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator1.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator2.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator3.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator4.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator5.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator6.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator7.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator8.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator9.jpg"
+      ]
+    },
+    {
+      "title": "Initial RepRap Calibration",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration1.jpg",
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration2.jpg",
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration3.jpg",
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration4.jpg"
+      ]
+    },
+    {
+      "title": "RepRap Nozzle",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle1.jpg",
+      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle2.jpg",
+      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg"
+      ]
+    },
+    {
+      "title": "Shrink Test - Aluminium",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/shrink_test_Al/shrink_test_Al1.jpg",
+      "images/project_images/shrink_test_Al/shrink_test_Al2.jpg",
+      "images/project_images/shrink_test_Al/shrink_test_Al3.jpg",
+      "images/project_images/shrink_test_Al/shrink_test_Al4.jpg",
+      "images/project_images/shrink_test_Al/shrink_test_Al5.jpg",
+      "images/project_images/shrink_test_Al/shrink_test_Al6.jpg",
+      "images/project_images/shrink_test_Al/shrink_test_Al7.jpg"
+      ]
+    },
+    {
+      "title": "Open-Source Optical Pyrometer",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/spectrometer/spectrometer1.jpg",
+      "images/project_images/spectrometer/spectrometer2.jpg",
+      "images/project_images/spectrometer/spectrometer3.jpg",
+      "images/project_images/spectrometer/spectrometer4.jpg",
+      "images/project_images/spectrometer/spectrometer5.jpg",
+      "images/project_images/spectrometer/spectrometer6.jpg",
+      "images/project_images/spectrometer/spectrometer7.jpg"
+      ]
+    },
+    {
       "title": "Libpourator",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+      "images": [
+      "images/project_images/microwave_libpourator/microwave_libpourator_side.png",
+      "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section.png",
+      "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section_pouring-position.png"
+      ]
     },
     {
-      "title": "LeafSpring",
+      "title": "Casting Flask Hardware",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/flask_hardware/flask_hardware01.jpg",
+        "images/project_images/flask_hardware/flask_hardware02.jpg",
+        "images/project_images/flask_hardware/flask_hardware03.jpg",
+        "images/project_images/flask_hardware/flask_hardware04.jpg",
+        "images/project_images/flask_hardware/flask_hardware05.jpg",
+        "images/project_images/flask_hardware/flask_hardware06.jpg",
+        "images/project_images/flask_hardware/flask_hardware07.jpg",
+        "images/project_images/flask_hardware/flask_hardware08.jpg",
+        "images/project_images/flask_hardware/flask_hardware09.jpg",
+        "images/project_images/flask_hardware/flask_hardware10.jpg",
+        "images/project_images/flask_hardware/flask_hardware11.jpg",
+        "images/project_images/flask_hardware/flask_hardware12.jpg",
+        "images/project_images/flask_hardware/flask_hardware13.jpg"
+      ]
+    },
+    {
+      "title": "Updated Flask Pin Bushing",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/flask_pin_bushing/flask_pin_bushing1.jpg",
+        "images/project_images/flask_pin_bushing/flask_pin_bushing2.jpg",
+        "images/project_images/flask_pin_bushing/flask_pin_bushing3.jpg",
+        "images/project_images/flask_pin_bushing/flask_pin_bushing4.jpg"
+      ]
+    },
+    {
+      "title": "Handheld LTD Stirling Engine",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine1.jpg",
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine2.jpg",
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine3.jpg",
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine4.jpg"
+      ]
+    },
+    {
+      "title": "Hole Template Generator",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/hole_templates/hole_templates01.jpg",
+        "images/project_images/hole_templates/hole_templates02.jpg",
+        "images/project_images/hole_templates/hole_templates03.jpg",
+        "images/project_images/hole_templates/hole_templates04.jpg",
+        "images/project_images/hole_templates/hole_templates05.jpg",
+        "images/project_images/hole_templates/hole_templates06.jpg",
+        "images/project_images/hole_templates/hole_templates07.jpg",
+        "images/project_images/hole_templates/hole_templates08.jpg",
+        "images/project_images/hole_templates/hole_templates09.jpg",
+        "images/project_images/hole_templates/hole_templates10.jpg",
+        "images/project_images/hole_templates/hole_templates11.jpg"
+
+      ]
+    },
+    {
+      "title": "Some Failures",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "A rock and a hardplace, mostly my own doing.",
-      "images": ["images/197x148.gif" ]
+      "images": [
+        "images/project_images/failures/failures1.jpg",
+        "images/project_images/failures/failures2.jpg",
+        "images/project_images/failures/failures3.jpg",
+        "images/project_images/failures/failures4.jpg",
+        "images/project_images/failures/failures5.jpg",
+        "images/project_images/failures/failures6.jpg",
+        "images/project_images/failures/failures7.jpg",
+        "images/project_images/failures/failures8.jpg"
+      ]
+    },
+    {
+      "title": "Etching Aluminum Plate with HCl",
+      "dates": "June 27, 1980 - sometime in the future",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/etching_Al_plate/etching_Al_plate01.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate02.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate03.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate04.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate05.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate06.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate07.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate08.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate09.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate10.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate11.jpg",
+      ]
+    },
+    {
+      "title": "Adventuring",
+      "dates": "June 27, 1980 - sometime in the future",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/adventuring/adventuring01.jpg",
+        "images/project_images/adventuring/adventuring02.jpg",
+        "images/project_images/adventuring/adventuring03.jpg",
+        "images/project_images/adventuring/adventuring04.jpg",
+        "images/project_images/adventuring/adventuring05.jpg",
+        "images/project_images/adventuring/adventuring06.jpg",
+        "images/project_images/adventuring/adventuring07.jpg",
+        "images/project_images/adventuring/adventuring08.jpg",
+        "images/project_images/adventuring/adventuring09.jpg",
+        "images/project_images/adventuring/adventuring10.jpg",
+        "images/project_images/adventuring/adventuring11.jpg",]
     },
     {
       "title": "Lily Pearl Bryan",
       "dates": "April 17, 2013 - ",
       "description": "Doing my part to raise our little girl into an intellegent, dynamic, confident, and independent woman.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+      "images": [
+        "images/project_images/lily/lily01.jpg" ,
+        "images/project_images/lily/lily02.jpg" ,
+        "images/project_images/lily/lily03.jpg" ,
+        "images/project_images/lily/lily04.jpg" ,
+        "images/project_images/lily/lily05.jpg" ,
+        "images/project_images/lily/lily06.jpg" ,
+        "images/project_images/lily/lily07.jpg" ,
+        "images/project_images/lily/lily08.jpg" ,
+        "images/project_images/lily/lily09.jpg" ,
+        "images/project_images/lily/lily10.jpg" ,
+        "images/project_images/lily/lily11.jpg" ,
+        "images/project_images/lily/lily12.jpg" ,
+        "images/project_images/lily/lily13.jpg" ,
+
+      ]
     }
   ]
 };
