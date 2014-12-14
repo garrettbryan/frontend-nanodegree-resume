@@ -80,13 +80,7 @@ var work = {
 var projects = {
   "projects": [
     {
-      "title": "LeafSpring",
-      "dates": "June 27, 1980 - sometime in the future",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": ["images/197x148.gif" ]
-    },
-    {
-      "title": "my life v2",
+      "title": "RepRap Mendel 3D Printer",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
@@ -101,11 +95,29 @@ var projects = {
       "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
     },
     {
+      "title": "Slip Cast Crucibles",
+      "dates": "June 27, 1980 - sometime in the future",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": ["images/197x148.gif" ]
+    },
+    {
+      "title": "Small Nonferrous Foundry",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+    },
+    {
       "title": "Libpourator",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
-    }
+    },
+    {
+      "title": "LeafSpring",
+      "dates": "June 27, 1980 - sometime in the future",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": ["images/197x148.gif" ]
+    },
   ]
 };
 
