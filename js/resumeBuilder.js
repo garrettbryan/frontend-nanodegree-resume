@@ -86,15 +86,6 @@ var projects = {
       "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
     },
     {
-      "title": "Hole Tracer",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "Let's say you want a pipe to intersect another pipe at a precise position,\
-      with a certain offset and angle. How does the hole change as it is applied to different \
-      surfaces? This web app allows you to print out that trace tape it to the surface so you can\
-      cut that precise hole.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
-    },
-    {
       "title": "Slip Cast Crucibles",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "A rock and a hardplace, mostly my own doing.",
@@ -105,6 +96,15 @@ var projects = {
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+    },
+    {
+      "title": "Hole Tracer",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "Let's say you want a pipe to intersect another pipe at a precise position,\
+      with a certain offset and angle. How does the hole change as it is applied to different \
+      surfaces? This web app allows you to print out that trace tape it to the surface so you can\
+      cut that precise hole.",
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
     },
     {
       "title": "Libpourator",
@@ -118,6 +118,12 @@ var projects = {
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": ["images/197x148.gif" ]
     },
+    {
+      "title": "Lily Pearl Bryan",
+      "dates": "April 17, 2013 - ",
+      "description": "Doing my part to raise our little girl into an intellegent, dynamic, confident, and independent woman.",
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+    }
   ]
 };
 
