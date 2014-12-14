@@ -80,6 +80,12 @@ var work = {
 var projects = {
   "projects": [
     {
+      "title": "3D House Scan Parser",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "Have you ever had to extract a floorplan from the scan of a house? Well I did.",
+      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+    },
+    {
       "title": "RepRap Mendel 3D Printer",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
