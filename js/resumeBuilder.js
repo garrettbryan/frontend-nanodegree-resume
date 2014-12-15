@@ -1,5 +1,13 @@
 
 var bio = {
+  "addSkills" : function(){
+    if (bio.skills.length > 0){
+      $("#header").append(HTMLskillsStart);
+      bio.skills.forEach(function(entry) {
+        $("#skills").append(HTMLskills.replace("%data%", entry));
+      });
+    }
+  },
   "name": "Garrett Bryan",
   "role": "Web Developer and Entrepreneur",
   "contacts": {
@@ -455,14 +463,9 @@ function displayContacts(){
 }
 
 
-if (bio.skills.length > 0){
-  $("#header").append(HTMLskillsStart);
-  bio.skills.forEach(function(entry) {
-    $("#skills").append(HTMLskills.replace("%data%", entry));
-  });
-}
 
 
+bio.addSkills();
 projects.display();
 work.display();
 education.display();
