@@ -15,6 +15,18 @@ var bio = {
 };
 
 var education = {
+  "display" : function(){
+    for (school in education.schools){
+      $("#education").append(HTMLschoolStart);
+      $(".education-entry:last").append(
+        HTMLschoolName.replace("%data%", education.schools[school].name)+
+        HTMLschoolDegree.replace("%data%", education.schools[school].degree)+
+        HTMLschoolDates.replace("%data%", education.schools[school].dates)+
+        HTMLschoolLocation.replace("%data%", education.schools[school].location)+
+        HTMLschoolMajor.replace("%data%", education.schools[school].majors)
+      );
+    }
+  },
   "schools": [
     {
       "name": "UCLA",
@@ -452,26 +464,10 @@ if (bio.skills.length > 0){
 
 
 projects.display();
-
 work.display();
+education.display();
 
 
-
-
-displayEducation();
-
-function displayEducation(){
-  for (school in education.schools){
-    $("#education").append(HTMLschoolStart);
-    $(".education-entry:last").append(
-      HTMLschoolName.replace("%data%", education.schools[school].name)+
-      HTMLschoolDegree.replace("%data%", education.schools[school].degree)+
-      HTMLschoolDates.replace("%data%", education.schools[school].dates)+
-      HTMLschoolLocation.replace("%data%", education.schools[school].location)+
-      HTMLschoolMajor.replace("%data%", education.schools[school].majors)
-      );
-  }
-}
 
 function locationizer(work) {
   var workLocations = [];
