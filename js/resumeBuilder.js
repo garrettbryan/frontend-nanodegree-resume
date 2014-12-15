@@ -1,7 +1,7 @@
 
 var bio = {
   "name": "Garrett Bryan",
-  "role": "Web Developer",
+  "role": "Web Developer and Entrepreneur",
   "contacts": {
     "mobile":"323-459-3964",
     "email":"garrettdavisbryan@gmail.com",
@@ -11,7 +11,7 @@ var bio = {
   },
   "bioPic": "images/garrettrockclimbing300x300.jpg",
   "welcomeMessage": "Hi, nice to meet you. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  "skills": ["surfing", "snowboarding", "etc", "some more things", "another awesome thing"]
+  "skills": ["JavaScript", "CSS", "HTML", "MongoDB", "AJAX", "TDD"]
 };
 
 var education = {
@@ -102,7 +102,7 @@ var projects = {
       ]
     },
     {
-      "title": "Slip Cast Crucibles",
+      "title": "Ceramic Slip Casting",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": [
@@ -118,7 +118,7 @@ var projects = {
       ]
     },
     {
-      "title": "Small Nonferrous Foundry",
+      "title": "Investment Metal Casting",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": [
@@ -148,7 +148,20 @@ var projects = {
       with a certain offset and angle. How does the hole change as it is applied to different \
       surfaces? This web app allows you to print out that trace tape it to the surface so you can\
       cut that precise hole.",
-      "images": ["images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif" ,"images/197x148.gif"]
+      "images": [
+        "images/project_images/hole_templates/hole_templates01.jpg",
+        "images/project_images/hole_templates/hole_templates02.jpg",
+        "images/project_images/hole_templates/hole_templates03.jpg",
+        "images/project_images/hole_templates/hole_templates04.jpg",
+        "images/project_images/hole_templates/hole_templates05.jpg",
+        "images/project_images/hole_templates/hole_templates06.jpg",
+        "images/project_images/hole_templates/hole_templates07.jpg",
+        "images/project_images/hole_templates/hole_templates08.jpg",
+        "images/project_images/hole_templates/hole_templates09.jpg",
+        "images/project_images/hole_templates/hole_templates10.jpg",
+        "images/project_images/hole_templates/hole_templates11.jpg"
+
+      ]
     },
     {
       "title": "Matchplate Pneumatic Vibrator",
@@ -246,7 +259,7 @@ var projects = {
       ]
     },
     {
-      "title": "Updated Flask Pin Bushing",
+      "title": "Flask Pin Bushing V2",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": [
@@ -268,37 +281,50 @@ var projects = {
       ]
     },
     {
-      "title": "Hole Template Generator",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-        "images/project_images/hole_templates/hole_templates01.jpg",
-        "images/project_images/hole_templates/hole_templates02.jpg",
-        "images/project_images/hole_templates/hole_templates03.jpg",
-        "images/project_images/hole_templates/hole_templates04.jpg",
-        "images/project_images/hole_templates/hole_templates05.jpg",
-        "images/project_images/hole_templates/hole_templates06.jpg",
-        "images/project_images/hole_templates/hole_templates07.jpg",
-        "images/project_images/hole_templates/hole_templates08.jpg",
-        "images/project_images/hole_templates/hole_templates09.jpg",
-        "images/project_images/hole_templates/hole_templates10.jpg",
-        "images/project_images/hole_templates/hole_templates11.jpg"
-
-      ]
-    },
-    {
       "title": "Some Failures",
       "dates": "June 27, 1980 - sometime in the future",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "description": "A few of my notable failures:",
       "images": [
-        "images/project_images/failures/failures1.jpg",
-        "images/project_images/failures/failures2.jpg",
-        "images/project_images/failures/failures3.jpg",
-        "images/project_images/failures/failures4.jpg",
-        "images/project_images/failures/failures5.jpg",
-        "images/project_images/failures/failures6.jpg",
-        "images/project_images/failures/failures7.jpg",
-        "images/project_images/failures/failures8.jpg"
+        {
+          "path": "images/project_images/failures/failures2.jpg",
+          "title": "Over deflockulated ceramic slip being scraped out of a plaster mold.",
+          "alt": "Gooey gelatinous ceramic slip sticking to the inside of a plaster mold."
+        },
+        {
+          "path": "images/project_images/failures/failures1.jpg",
+          "title": "55 gallons of ceramic slip ruined by over deflockulation.",
+          "alt": "Three half meter wide gelatinous blobs of ceramic slip poured onto pinestraw to dry for disposal."
+        },
+        {
+          "path": "images/project_images/failures/failures3.jpg",
+          "title": "While mixing, an abnormally large amount of air was introduced to the ceramic slip",
+          "alt": "Three broken pieces of large a large highly porous greenware tile."
+        },
+        {
+          "path": "images/project_images/failures/failures4.jpg",
+          "title": "The printer nozzle over heated and carburized some ABS plastic inside the nozzle.",
+          "alt": "Smoking 3D printer print head"
+        },
+        {
+          "path": "images/project_images/failures/failures5.jpg",
+          "title": "An early print that failed due to clogged nozzle.",
+          "alt": "Red ABS partial 3D print"
+        },
+        {
+          "path": "images/project_images/failures/failures6.jpg",
+          "title": "Failed to properly calibrate my PID hot end controller.",
+          "alt": "3D printer nozzle clogged with carburized ABS. Red ABS has begun to be extruded from the side."
+        },
+        {
+          "path": "images/project_images/failures/failures7.jpg",
+          "title": "Melting through 3D printable plastic for easy investment casting.",
+          "alt": "Pieces of unmelted plastic laying next to a failed aluminum casting."
+        },
+        {
+          "path": "images/project_images/failures/failures8.jpg",
+          "title": "I put the core in the cope! It fell out when I mated it to the drag.",
+          "alt": "cope with sand, upside down with core  installed."
+        }
       ]
     },
     {
@@ -316,13 +342,13 @@ var projects = {
         "images/project_images/etching_Al_plate/etching_Al_plate08.jpg",
         "images/project_images/etching_Al_plate/etching_Al_plate09.jpg",
         "images/project_images/etching_Al_plate/etching_Al_plate10.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate11.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate11.jpg"
       ]
     },
     {
       "title": "Adventuring",
       "dates": "June 27, 1980 - sometime in the future",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "description": "I always loved the outdoors and am always down for a hike that tests my limits.",
       "images": [
         "images/project_images/adventuring/adventuring01.jpg",
         "images/project_images/adventuring/adventuring02.jpg",
@@ -334,7 +360,8 @@ var projects = {
         "images/project_images/adventuring/adventuring08.jpg",
         "images/project_images/adventuring/adventuring09.jpg",
         "images/project_images/adventuring/adventuring10.jpg",
-        "images/project_images/adventuring/adventuring11.jpg",]
+        "images/project_images/adventuring/adventuring11.jpg"
+        ]
     },
     {
       "title": "Lily Pearl Bryan",
@@ -353,8 +380,7 @@ var projects = {
         "images/project_images/lily/lily10.jpg" ,
         "images/project_images/lily/lily11.jpg" ,
         "images/project_images/lily/lily12.jpg" ,
-        "images/project_images/lily/lily13.jpg" ,
-
+        "images/project_images/lily/lily13.jpg"
       ]
     }
   ]
@@ -398,9 +424,17 @@ projects.display = function(){
       HTMLprojectDescription.replace("%data%",projects.projects[project].description)
       );
     for (var i = 0; i < projects.projects[project].images.length; i++){
-      $(".project-entry:last").append(
-        HTMLprojectImage.replace("%data%",projects.projects[project].images[i])
-      );
+      if (projects.projects[project].images[i]["path"]){
+        $(".project-entry:last").append(
+          HTMLcompleteprojectImage.replace("%data%",projects.projects[project].images[i]["path"]).
+          replace("%title%", projects.projects[project].images[i]["title"]).
+          replace("%alt%", projects.projects[project].images[i]["alt"])
+        );
+      }else{
+        $(".project-entry:last").append(
+          HTMLprojectImage.replace("%data%",projects.projects[project].images[i])
+        );
+      }
     }
   }
 }
