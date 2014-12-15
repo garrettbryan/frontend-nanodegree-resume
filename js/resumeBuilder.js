@@ -79,6 +79,7 @@ var work = {
 
 var projects = {
   "projects": [
+/*CURRENT PROJECTS*/
     {
       "title": "3D House Scan Parser",
       "dates": "June 27, 1980 - sometime in the past",
@@ -92,6 +93,42 @@ var projects = {
       ]
     },
     {
+      "title": "Libpourator",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/microwave_libpourator/microwave_libpourator_side.png",
+      "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section.png",
+      "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section_pouring-position.png"
+      ]
+    },
+    {
+      "title": "Open-Source Optical Pyrometer",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/spectrometer/spectrometer1.jpg",
+      "images/project_images/spectrometer/spectrometer2.jpg",
+      "images/project_images/spectrometer/spectrometer3.jpg",
+      "images/project_images/spectrometer/spectrometer4.jpg",
+      "images/project_images/spectrometer/spectrometer5.jpg",
+      "images/project_images/spectrometer/spectrometer6.jpg",
+      "images/project_images/spectrometer/spectrometer7.jpg"
+      ]
+    },
+    {
+      "title": "Handheld LTD Stirling Engine",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine1.jpg",
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine2.jpg",
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine3.jpg",
+        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine4.jpg"
+      ]
+    },
+/*COMPLETED PROJECTS*/
+    {
       "title": "RepRap Mendel",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
@@ -99,6 +136,27 @@ var projects = {
         "images/project_images/reprap_mendel/reprap_mendel1.jpg" ,
         "images/project_images/reprap_mendel/reprap_mendel2.jpg" ,
         "images/project_images/reprap_mendel/reprap_mendel3.jpg"
+      ]
+    },
+    {
+      "title": "RepRap Nozzle",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle1.jpg",
+      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle2.jpg",
+      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg"
+      ]
+    },
+    {
+      "title": "Initial RepRap Calibration",
+      "dates": "June 27, 1980 - sometime in the past",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration1.jpg",
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration2.jpg",
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration3.jpg",
+      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration4.jpg"
       ]
     },
     {
@@ -115,30 +173,6 @@ var projects = {
         "images/project_images/slip_cast/slip_cast7.jpg",
         "images/project_images/slip_cast/slip_cast8.jpg",
         "images/project_images/slip_cast/slip_cast9.jpg",
-      ]
-    },
-    {
-      "title": "Investment Metal Casting",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-        "images/project_images/investment_casting/investment_casting01.jpg",
-        "images/project_images/investment_casting/investment_casting02.jpg",
-        "images/project_images/investment_casting/investment_casting03.jpg",
-        "images/project_images/investment_casting/investment_casting04.jpg",
-        "images/project_images/investment_casting/investment_casting05.jpg",
-        "images/project_images/investment_casting/investment_casting06.jpg",
-        "images/project_images/investment_casting/investment_casting07.jpg",
-        "images/project_images/investment_casting/investment_casting08.jpg",
-        "images/project_images/investment_casting/investment_casting09.jpg",
-        "images/project_images/investment_casting/investment_casting10.jpg",
-        "images/project_images/investment_casting/investment_casting11.jpg",
-        "images/project_images/investment_casting/investment_casting12.jpg",
-        "images/project_images/investment_casting/investment_casting13.jpg",
-        "images/project_images/investment_casting/investment_casting14.jpg",
-        "images/project_images/investment_casting/investment_casting15.jpg",
-        "images/project_images/investment_casting/investment_casting16.jpg",
-        "images/project_images/investment_casting/investment_casting17.jpg"
       ]
     },
     {
@@ -164,43 +198,6 @@ var projects = {
       ]
     },
     {
-      "title": "Matchplate Pneumatic Vibrator",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator1.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator2.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator3.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator4.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator5.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator6.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator7.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator8.jpg",
-      "images/project_images/pneumatic_vibrator/pneumatic_vibrator9.jpg"
-      ]
-    },
-    {
-      "title": "Initial RepRap Calibration",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration1.jpg",
-      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration2.jpg",
-      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration3.jpg",
-      "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration4.jpg"
-      ]
-    },
-    {
-      "title": "RepRap Nozzle",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle1.jpg",
-      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle2.jpg",
-      "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg"
-      ]
-    },
-    {
       "title": "Shrink Test - Aluminium",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
@@ -215,27 +212,19 @@ var projects = {
       ]
     },
     {
-      "title": "Open-Source Optical Pyrometer",
+      "title": "Matchplate Pneumatic Vibrator",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": [
-      "images/project_images/spectrometer/spectrometer1.jpg",
-      "images/project_images/spectrometer/spectrometer2.jpg",
-      "images/project_images/spectrometer/spectrometer3.jpg",
-      "images/project_images/spectrometer/spectrometer4.jpg",
-      "images/project_images/spectrometer/spectrometer5.jpg",
-      "images/project_images/spectrometer/spectrometer6.jpg",
-      "images/project_images/spectrometer/spectrometer7.jpg"
-      ]
-    },
-    {
-      "title": "Libpourator",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-      "images/project_images/microwave_libpourator/microwave_libpourator_side.png",
-      "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section.png",
-      "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section_pouring-position.png"
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator1.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator2.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator3.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator4.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator5.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator6.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator7.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator8.jpg",
+      "images/project_images/pneumatic_vibrator/pneumatic_vibrator9.jpg"
       ]
     },
     {
@@ -270,16 +259,48 @@ var projects = {
       ]
     },
     {
-      "title": "Handheld LTD Stirling Engine",
+      "title": "Investment Metal Casting",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "A rock and a hardplace, mostly my own doing.",
       "images": [
-        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine1.jpg",
-        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine2.jpg",
-        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine3.jpg",
-        "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine4.jpg"
+        "images/project_images/investment_casting/investment_casting01.jpg",
+        "images/project_images/investment_casting/investment_casting02.jpg",
+        "images/project_images/investment_casting/investment_casting03.jpg",
+        "images/project_images/investment_casting/investment_casting04.jpg",
+        "images/project_images/investment_casting/investment_casting05.jpg",
+        "images/project_images/investment_casting/investment_casting06.jpg",
+        "images/project_images/investment_casting/investment_casting07.jpg",
+        "images/project_images/investment_casting/investment_casting08.jpg",
+        "images/project_images/investment_casting/investment_casting09.jpg",
+        "images/project_images/investment_casting/investment_casting10.jpg",
+        "images/project_images/investment_casting/investment_casting11.jpg",
+        "images/project_images/investment_casting/investment_casting12.jpg",
+        "images/project_images/investment_casting/investment_casting13.jpg",
+        "images/project_images/investment_casting/investment_casting14.jpg",
+        "images/project_images/investment_casting/investment_casting15.jpg",
+        "images/project_images/investment_casting/investment_casting16.jpg",
+        "images/project_images/investment_casting/investment_casting17.jpg"
       ]
     },
+    {
+      "title": "Etching Aluminum Plate with HCl",
+      "dates": "June 27, 1980 - sometime in the future",
+      "description": "A rock and a hardplace, mostly my own doing.",
+      "images": [
+        "images/project_images/etching_Al_plate/etching_Al_plate01.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate02.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate03.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate04.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate05.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate06.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate07.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate08.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate09.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate10.jpg",
+        "images/project_images/etching_Al_plate/etching_Al_plate11.jpg"
+      ]
+    },
+/*FAILURES*/
     {
       "title": "Some Failures",
       "dates": "June 27, 1980 - sometime in the future",
@@ -327,24 +348,7 @@ var projects = {
         }
       ]
     },
-    {
-      "title": "Etching Aluminum Plate with HCl",
-      "dates": "June 27, 1980 - sometime in the future",
-      "description": "A rock and a hardplace, mostly my own doing.",
-      "images": [
-        "images/project_images/etching_Al_plate/etching_Al_plate01.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate02.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate03.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate04.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate05.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate06.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate07.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate08.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate09.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate10.jpg",
-        "images/project_images/etching_Al_plate/etching_Al_plate11.jpg"
-      ]
-    },
+/*CULTURAL FIT*/
     {
       "title": "Adventuring",
       "dates": "June 27, 1980 - sometime in the future",
