@@ -459,10 +459,10 @@ var projects = {
   ]
 };
 
-bio.display();
-projects.display();
 work.display();
 education.display();
+projects.display();
+bio.display();
 
 
 

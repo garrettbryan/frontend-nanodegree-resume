@@ -29,48 +29,47 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img class="project-img" src="%data%">';
 var HTMLcompleteprojectImage = '<img class="project-img" src="%data%" title="%title%" alt="%alt%">';
 
-/*
-      <div class="col-md-6">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
+var bootstrapCarousel = [
+'<div class="col-md-6">',
+'    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">',
+'      <!-- Indicators -->',
+'      <ol class="carousel-indicators">',
+'        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>',
+'        <li data-target="#carousel-example-generic" data-slide-to="1"></li>',
+'        <li data-target="#carousel-example-generic" data-slide-to="2"></li>',
+'      </ol>',
+'      <!-- Wrapper for slides -->',
+'      <div class="carousel-inner" role="listbox">',
+'        <div class="item active">',
+'          <img src="images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine1.jpg"',
+'            alt="test1">',
+'          <div class="carousel-caption">',
+'            Blah1',
+'          </div>',
+'        </div>',
+'        <div class="item">',
+'          <img src="images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg"',
+'            alt="test2">',
+'          <div class="carousel-caption">',
+'            blah2',
+'          </div>',
+'        </div>',
+'        ...',
+'      </div>',
+'      <!-- Controls -->',
+'      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">',
+'        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+'        <span class="sr-only">Previous</span>',
+'      </a>',
+'      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">',
+'        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
+'        <span class="sr-only">Next</span>',
+'      </a>',
+'    </div>',
+'</div>'
+];
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine1.jpg"
-                  alt="test1">
-                <div class="carousel-caption">
-                  Blah1
-                </div>
-              </div>
-              <div class="item">
-                <img src="images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg"
-                  alt="test2">
-                <div class="carousel-caption">
-                  blah2
-                </div>
-              </div>
-              ...
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-      </div>
-*/
-
+//var HTMLcarousel = HTMLbootstrapCarousel.split("\n");
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
