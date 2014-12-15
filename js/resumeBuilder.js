@@ -8,6 +8,20 @@ var bio = {
       });
     }
   },
+  "displayContacts" : function(){
+    for (var method in bio.contacts){
+      console.log(bio.contacts[method]);
+      $("#topContacts").append(HTMLcontactGeneric.replace("%data%",bio.contacts[method]).replace("%contact%",method));
+    }
+  },
+  "display" : function(){
+    $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+    $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+    $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+    $("#header").append(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
+    bio.displayContacts();
+    bio.addSkills();
+  },
   "name": "Garrett Bryan",
   "role": "Web Developer and Entrepreneur",
   "contacts": {
@@ -445,27 +459,7 @@ var projects = {
   ]
 };
 
-
-
-
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-displayContacts();
-
-$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
-$("#header").append(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
-
-function displayContacts(){
-  for (var method in bio.contacts){
-    console.log(bio.contacts[method]);
-    $("#topContacts").append(HTMLcontactGeneric.replace("%data%",bio.contacts[method]).replace("%contact%",method));
-  }
-}
-
-
-
-
-bio.addSkills();
+bio.display();
 projects.display();
 work.display();
 education.display();
