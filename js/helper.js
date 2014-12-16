@@ -29,42 +29,26 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img class="project-img" src="%data%">';
 var HTMLcompleteprojectImage = '<img class="project-img" src="%data%" title="%title%" alt="%alt%">';
 
-var bootstrapCarousel = [
-'<div class="col-md-6">',
-'    <div id="carousel%id%" class="carousel slide" data-ride="carousel">',
-'      <!-- Indicators -->',
-'      <ol class="carousel-indicators">',
-
-'        <li data-target="#carousel%id%" data-slide-to="%index%"></li>', //must initialize an active class (class="active")
-
-'      </ol>',
-'      <!-- Wrapper for slides -->',
-'      <div class="carousel-inner" role="listbox">',
-
-'        <div class="item">', //must initialize an active class (class="active")
-'          <img src="%imgPath%"',
-'            alt="%imgAlt%">',
-'          <div class="carousel-caption">',
-'            %imgTitle%',
-'          </div>',
-'        </div>',
-
-'        ...',
-'      </div>',
-'      <!-- Controls -->',
-'      <a class="left carousel-control" href="#carousel%id%" role="button" data-slide="prev">',
+var carouselControl = [
+'      <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">',
 '        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
 '        <span class="sr-only">Previous</span>',
 '      </a>',
-'      <a class="right carousel-control" href="#carousel%id%" role="button" data-slide="next">',
+'      <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">',
 '        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
 '        <span class="sr-only">Next</span>',
-'      </a>',
-'    </div>',
-'</div>'
-];
+'      </a>'
+].join("\n");
 
-//var HTMLcarousel = HTMLbootstrapCarousel.split("\n");
+var carouselStart = '<div id="carousel%id%" class="carousel slide" data-ride="carousel"></div>';
+var carouselIndicators = '<ol class="carousel-indicators">';
+var carouselIndicator = '<li data-target="carousel%id%" data-slide-to="%index%"></li>'; //must initialize an active class (class="active")
+var carouselList = '<div class="carousel-inner" role="listbox"></div>';
+var carouselItem = '<div class="item"></div>'; //must initialize an active class (class="active")
+var carouselImage = '<img src="%imgPath%" alt="%imgAlt%">';
+var carouselTitle = '<div class="carousel-caption">%imgTitle%</div>';
+
+
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';

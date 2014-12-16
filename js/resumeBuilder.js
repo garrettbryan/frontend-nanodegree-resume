@@ -147,6 +147,31 @@ var projects = {
       }
     }
   },
+  "carousel" : function(project){
+    $("#projects").append('<dev class="col-md-6"></dev>')
+    $(".col-md-6").append(carouselStart.replace("%id%",1));
+    $(".carousel:last").append(carouselIndicators).
+      append(carouselList).
+      append(carouselControl);
+
+    for (var i = 0, imageCount = project.length; i < imageCount; i++){
+      $(".carousel-indicators").append(
+        carouselIndicator.replace("%id%", 1).replace("%index%", i)
+      );
+      $(".carousel-inner").append(carouselItem);
+      $(".item").append(
+        carouselImage.replace("%imgPath%", project[i].path).
+        replace( "%imgAlt%", project[i].alt)
+      )
+      $(".item").append(
+        carouselTitle.replace("%imgTitle%", project[i].title));
+    }
+    $("li").first().addClass("active");
+    $(".item").first().addClass("active");
+
+
+  },
+
   "projects": [
 /*CURRENT PROJECTS*/
     {
@@ -461,6 +486,8 @@ var projects = {
 
 work.display();
 education.display();
+projects.carousel(projects.projects[15].images);
+console.log(projects.projects[15].images);
 projects.display();
 bio.display();
 
