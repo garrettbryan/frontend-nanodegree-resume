@@ -29,26 +29,34 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img class="project-img" src="%data%">';
 var HTMLcompleteprojectImage = '<img class="project-img" src="%data%" title="%title%" alt="%alt%">';
 
-var bootstrapCarousel = [
+var CarouselStart = [
+'<div class=row>',
 '<div class="col-md-6">',
 '    <div id="carousel%id%" class="carousel slide" data-ride="carousel">',
 '      <!-- Indicators -->',
-'      <ol class="carousel-indicators">',
+'      <ol class="carousel-indicators">'
+].join("\n");
 
-'        <li data-target="#carousel%id%" data-slide-to="%index%"></li>', //must initialize an active class (class="active")
+var CarouselIndicators =
+'        <li data-target="#carousel%id%" data-slide-to="%index%" %active%></li>'; //must initialize an active class (class="active")
 
+var CarouselImagesHead = [
 '      </ol>',
 '      <!-- Wrapper for slides -->',
-'      <div class="carousel-inner" role="listbox">',
+'      <div class="carousel-inner" role="listbox">'
+].join("\n");
 
-'        <div class="item">', //must initialize an active class (class="active")
+var CarouselImage = [
+'        <div class="item %active%">', //must initialize an active class (class="active")
 '          <img src="%imgPath%"',
 '            alt="%imgAlt%">',
 '          <div class="carousel-caption">',
 '            %imgTitle%',
 '          </div>',
-'        </div>',
+'        </div>'
+].join("\n");
 
+var CarouselControls = [
 '        ...',
 '      </div>',
 '      <!-- Controls -->',
@@ -62,7 +70,14 @@ var bootstrapCarousel = [
 '      </a>',
 '    </div>',
 '</div>'
-];
+].join("\n");
+
+var CarouselDescription = [
+'<div class="col-md-6">',
+'    <div class="project-description">%data%</div>',
+'</div>',
+'</div>'
+].join("\n");
 
 //var HTMLcarousel = HTMLbootstrapCarousel.split("\n");
 

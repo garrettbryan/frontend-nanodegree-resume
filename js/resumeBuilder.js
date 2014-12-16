@@ -147,6 +147,62 @@ var projects = {
       }
     }
   },
+  "carousel" : function(project){
+    var imageCount = project.images.length;
+    var indicators = "", images = "";
+    console.log(imageCount);
+    for (var i = 0; i < imageCount; i++){
+
+      if (i === 0){
+        indicators = indicators +
+          CarouselIndicators.replace(/%id%/gm, 1).replace(/%index%/gm, i+1).replace(/%active%/gm, 'class="active"') +
+          "\n";
+        images = images +
+          CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "active")+
+          "\n";
+      }else{
+        indicators = indicators +
+          CarouselIndicators.replace(/%id%/gm, 1).replace(/%index%/gm, i+1).replace(/%active%/gm, '') +
+          "\n";
+        images = images +
+          CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "")+
+          "\n";
+      }
+
+
+
+    }
+    $("#projects").append(
+      CarouselStart.replace(/%id%/gm, 1) +
+      indicators +
+      CarouselImagesHead +
+      images +
+      CarouselControls.replace(/%id%/gm, 1) +
+      CarouselDescription.replace("%data%", "Here is some more information!")
+    );
+/*
+    $(".col-md-6").append(carouselStart.replace("%id%",1));
+    $(".carousel:last").append(carouselIndicators).
+      append(carouselList).
+      append(carouselControl);
+
+    for (var i = 0, imageCount = project.length; i < imageCount; i++){
+      $(".carousel-indicators").append(
+        carouselIndicator.replace("%id%", 1).replace("%index%", i)
+      );
+      $(".carousel-inner").append(carouselItem);
+      $(".item").append(
+        carouselImage.replace("%imgPath%", project[i].path).
+        replace( "%imgAlt%", project[i].alt)
+      )
+      $(".item").append(
+        carouselTitle.replace("%imgTitle%", project[i].title));
+    }
+    $("li").first().addClass("active");
+    $(".item").first().addClass("active");
+
+*/
+  },
   "projects": [
 /*CURRENT PROJECTS*/
     {
@@ -461,7 +517,8 @@ var projects = {
 
 work.display();
 education.display();
-projects.display();
+projects.carousel(projects.projects[15]);
+//projects.display();
 bio.display();
 
 
