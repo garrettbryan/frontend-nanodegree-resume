@@ -148,7 +148,7 @@ var projects = {
     }
   },
   "carousel" : function(project){
-    $("#projects").append('<dev class="col-md-6"></dev>')
+    $("#projects").append('<div class="row"><div class="col-md-6"></div><div class="col-md-6"></div><div>')
     $(".col-md-6").append(carouselStart.replace("%id%",1));
     $(".carousel:last").append(carouselIndicators).
       append(carouselList).
