@@ -104,6 +104,10 @@ a {
   color: #FFFFFF;
 }
 
+.even-project {
+  background: #F9F9F9;
+}
+
 .gray {
   background-color: #F3F3F3;
   padding-bottom: 10px;

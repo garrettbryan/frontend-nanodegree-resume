@@ -30,7 +30,7 @@ var HTMLprojectImage = '<img class="project-img" src="%data%">';
 var HTMLcompleteprojectImage = '<img class="project-img" src="%data%" title="%title%" alt="%alt%">';
 
 var CarouselStart = [
-'<div class=row>',
+'<div class="row %classes%">',
 '<div class="col-md-6">',
 '    <div id="carousel%id%" class="carousel slide" data-ride="carousel">',
 '      <!-- Indicators -->',

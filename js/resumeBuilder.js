@@ -31,7 +31,7 @@ var bio = {
     "location": "Raleigh, NC"
   },
   "bioPic": "images/garrettrockclimbing300x300.jpg",
-  "welcomeMessage": "Hi, nice to meet you. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "welcomeMessage": "Hi, Thanks for coming to my site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "skills": ["JavaScript", "CSS", "HTML", "MongoDB", "AJAX", "TDD"]
 };
 
@@ -139,7 +139,10 @@ var projects = {
     var imageCount = project.images.length;
     var indicators = "",
       images = "",
-      control = "";
+      classes = "";
+    if ((index % 2)){
+      classes = classes + "even-project ";
+    }
     console.log(imageCount);
     for (var i = 0; i < imageCount; i++) {
 
@@ -158,18 +161,16 @@ var projects = {
           CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "") +
           "\n";
       }
-
-
-
     }
     $("#projects").append(HTMLprojectStart);
-      $(".project-entry:last").append(
-        HTMLprojectTitle.replace("%data%", project.title) +
-        HTMLprojectDates.replace("%data%", project.dates)
-        //
-      );
     $(".project-entry:last").append(
-      CarouselStart.replace(/%id%/gm, index) +
+      HTMLprojectTitle.replace("%data%", project.title) +
+      HTMLprojectDates.replace("%data%", project.dates)
+      //
+    );
+    $(".project-entry:last .row:first").addClass(classes);
+    $(".project-entry:last").append(
+      CarouselStart.replace(/%id%/gm, index).replace(/%classes%/gm, classes) +
       indicators +
       CarouselImagesHead +
       images +
@@ -186,7 +187,7 @@ var projects = {
   "projects": [
     /*CURRENT PROJECTS*/
     {
-      "title": "3D House Scan Parser",
+      "title": "House Interior Scan Parser",
       "dates": "July 2014 - August 2014",
       "description": "Have you ever had to extract a floorplan from the scan of a house? Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
@@ -337,7 +338,7 @@ var projects = {
     }, {
       "title": "Ceramic Slip Casting",
       "dates": "2008 - ",
-      "description": "Physics is so cool. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
+      "description": "Interatomic forces are cool. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/slip_cast/slip_cast1.jpg",
         "title": "Mixing clay, water, sodium silicate, and sodium carbonate. This is deflocking the slip.",
@@ -432,32 +433,28 @@ var projects = {
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/shrink_test_Al/shrink_test_Al1.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/shrink_test_Al/shrink_test_Al2.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "This step pattern is used to determine the shrinkage factor as the molten metal solidifies and returns to room temperature.",
+        "alt": "3D printer creating a step block.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al3.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Sand mold created with the step block.",
+        "alt": "Step block held above the sand mold.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al4.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Melting the aluminum in the micro furnace.",
+        "alt": "Complete sand mold placed next to a small melting furnace.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al5.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "The step block casting.",
+        "alt": "The cleaned casting with sprue and gate still attached.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al6.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Side view.",
+        "alt": "Comparison of the step block and casting.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al7.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Top view.",
+        "alt": "Comparison of the step block and casting.",
       }, ]
     }, {
       "title": "Matchplate Pneumatic Vibrator",
@@ -465,118 +462,86 @@ var projects = {
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator1.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "SketchUp design.",
+        "alt": "Screen shot of the SketchUp design.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator2.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator3.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Printing the patterns.",
+        "alt": "3D printer printing out a pattern for the casting.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator4.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Clockwise from top left: Core mold, lid, a part of the core mold, and the main body",
+        "alt": "Four 3D printed plastic patterns sitting on a table.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator5.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Sand molds created.",
+        "alt": "Cope and Drag created waiting for the core.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator6.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Core created and placed into drag (see right side of photo).",
+        "alt": "Cope and Drag sitting side by side awaiting next step.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator7.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "The cleaned casting ready for further machining.",
+        "alt": "Pattern and casting sitting side by side.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator8.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Castings machined.",
+        "alt": "Casting and its hardware sitting on a table.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator9.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Only thing left is to mount it to a matchplate.",
+        "alt": "Assembled pneumatic vibrator.",
       }, ]
     }, {
       "title": "Casting Flask Hardware",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
-        "path": "images/project_images/flask_hardware/flask_hardware01.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
         "path": "images/project_images/flask_hardware/flask_hardware02.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/flask_hardware/flask_hardware03.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Patterns coming off the 3D printer.",
+        "alt": "Two 3D printed patterns on the print bed",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware04.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Aligning the registration pin.",
+        "alt": "Using a flat surface, a cast iron table saw, and parallels to align the registration pin.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware05.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/flask_hardware/flask_hardware06.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/flask_hardware/flask_hardware07.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/flask_hardware/flask_hardware08.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/flask_hardware/flask_hardware09.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Use bondo to set the pin, and finish the pattern.",
+        "alt": "Added bondo to the previous set up.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware10.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Successful clearance check.",
+        "alt": "All patterns loosely assembled to check clearances.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware11.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Successful clearance check.",
+        "alt": "All patterns loosely assembled to check clearances.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware12.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": 'Sandcasting with a "chill".',
+        "alt": "Patterns and chill positioned on the drag, awaiting further processing.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware13.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Cooled rough casting.",
+        "alt": "Two pin bushing still attached the gates and sprue  .",
       }, ]
     }, {
-      "title": "Flask Pin Bushing V2",
+      "title": "Cope Mount for Pin Bushing V2",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/flask_pin_bushing/flask_pin_bushing1.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Power failure.",
+        "alt": "Incomplete 3D print.",
       }, {
         "path": "images/project_images/flask_pin_bushing/flask_pin_bushing2.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/flask_pin_bushing/flask_pin_bushing3.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "wrote a perl script to extract a subsection of gcode.",
+        "alt": "remaining section of the 3D print.",
       }, {
         "path": "images/project_images/flask_pin_bushing/flask_pin_bushing4.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Successful clearance check.",
+        "alt": "Two sections next to each other.",
       }, ]
     }, {
       "title": "Investment Metal Casting",
@@ -584,72 +549,48 @@ var projects = {
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/investment_casting/investment_casting01.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/investment_casting/investment_casting02.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Plaster of Paris mold.",
+        "alt": "Plaster mold curing.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting03.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Burning out the plastic.",
+        "alt": "Close-up of the mold showing plastic oozing.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting04.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Not time effective.",
+        "alt": "Close-up as before with slight discoloration of the of the plaster.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting05.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/investment_casting/investment_casting06.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "New process actually burned out the plastic, using a heating coil.",
+        "alt": "Heavily blackened plaster mold.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting07.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "I poured this mold in three stages. Note the natural parting lines.",
+        "alt": "The blackened plaster mold.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting08.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "This allowed me to check the inside of the mold.",
+        "alt": "Separated blackened plaster mold.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting09.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "New plaster holding it together for the pour.",
+        "alt": "Blackened mold encased in new plaster.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting10.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Waiting for sprues.",
+        "alt": "Plaster molds in a drag.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting11.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/investment_casting/investment_casting12.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Waiting for the molten metal.",
+        "alt": "The styrofoam sprues sticking out of the sand.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting13.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/investment_casting/investment_casting14.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/investment_casting/investment_casting15.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/investment_casting/investment_casting16.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Shakeout.",
+        "alt": "Breaking open the plaster molds after they cooled.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting17.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Partial success.",
+        "alt": "Close-up of the two successful castings.",
       }, ]
     }, {
       "title": "Etching Aluminum Plate with HCl",
@@ -657,48 +598,32 @@ var projects = {
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/etching_Al_plate/etching_Al_plate01.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/etching_Al_plate/etching_Al_plate02.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/etching_Al_plate/etching_Al_plate03.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/etching_Al_plate/etching_Al_plate04.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Image to be etched.",
+        "alt": "Laser print of the etching.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate05.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Using a hotplate to heat the aluminum to remelt the toner and transfer the image.",
+        "alt": "Workspace.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate06.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Use water and gently remove the paper.",
+        "alt": "Scraping the paper off the aluminum leaving the deposited toner.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate07.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Build acid containment walls.",
+        "alt": "Hot glue plastic walls around the image.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate08.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Pour in a dilute solution of HCl.",
+        "alt": "The reaction forms hydrogen gas.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate09.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "When etched to proper depth neutralize the acid with a base.",
+        "alt": "acid base reaction fizzing.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate10.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
-      }, {
-        "path": "images/project_images/etching_Al_plate/etching_Al_plate11.jpg",
-        "title": "Some test data.",
-        "alt": "Some test data.",
+        "title": "Marvel at the coolness.",
+        "alt": "Aluminum plate cleaned off, and ready for machining.",
       }, ]
     },
     /*FAILURES*/
