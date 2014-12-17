@@ -114,21 +114,25 @@ var work = {
 
 var projects = {
   "display": function() {
-    for (var project in projects.projects) {
+    for (var j = 0; j < projects.projects.length; j++) {
+      var classes = "";
+      if ((j % 2)){
+        classes = classes + "even-project ";
+      }
       $("#projects").append(HTMLprojectStart);
-      $(".project-entry:last").append(
-        HTMLprojectTitle.replace("%data%", projects.projects[project].title) +
-        HTMLprojectDates.replace("%data%", projects.projects[project].dates) +
-        HTMLprojectDescription.replace("%data%", projects.projects[project].description)
+      $(".project-entry:last").addClass(classes).append(
+        HTMLprojectTitle.replace("%data%", projects.projects[j].title) +
+        HTMLprojectDates.replace("%data%", projects.projects[j].dates) +
+        HTMLprojectDescription.replace("%data%", projects.projects[j].description)
       );
-      for (var i = 0; i < projects.projects[project].images.length; i++) {
-        if (projects.projects[project].images[i]["path"]) {
+      for (var i = 0; i < projects.projects[j].images.length; i++) {
+        if (projects.projects[j].images[i]["path"]) {
           $(".project-entry:last").append(
-            HTMLcompleteprojectImage.replace("%data%", projects.projects[project].images[i]["path"]).replace("%title%", projects.projects[project].images[i]["title"]).replace("%alt%", projects.projects[project].images[i]["alt"])
+            HTMLcompleteprojectImage.replace("%data%", projects.projects[j].images[i]["path"]).replace("%title%", projects.projects[j].images[i]["title"]).replace("%alt%", projects.projects[j].images[i]["alt"])
           );
         } else {
           $(".project-entry:last").append(
-            HTMLprojectImage.replace("%data%", projects.projects[project].images[i])
+            HTMLprojectImage.replace("%data%", projects.projects[j].images[i])
           );
         }
       }
