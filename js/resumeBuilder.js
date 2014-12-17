@@ -32,8 +32,30 @@ var bio = {
   },
   "bioPic": "images/garrettrockclimbing300x300.jpg",
   "welcomeMessage": "Hi, Thanks for coming to my site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  "skills": ["JavaScript", "CSS", "HTML", "MongoDB", "AJAX", "TDD"]
+  "skills": ["JavaScript", "jQuery", "CSS", "HTML", "MongoDB", "Git and Github", "Perl", "AJAX", "TDD"]
 };
+
+var nav = {
+  "display": function() {
+    for (nav in nav.endPoints){
+
+    }
+  },
+  "endPoints": [
+  {
+    "blog": "blog.html"
+  },
+  {
+    "work": "work.html"
+  },
+  {
+    "projects": "projects.html"
+  },
+  {
+    "resume": "resume.html"
+  }
+  ]
+}
 
 var education = {
   "display": function() {
