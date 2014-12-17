@@ -66,7 +66,7 @@ var CarouselControls = [
 '        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
 '        <span class="sr-only">Previous</span>',
 '      </a>',
-'      <a class="right carousel-control" href="#carousel%id%" role="button" data-slide="next">',
+'      <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">',
 '        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
 '        <span class="sr-only">Next</span>',
 '      </a>',
@@ -81,7 +81,7 @@ var CarouselDescription = [
 '</div>'
 ].join("\n");
 
-//var HTMLcarousel = HTMLbootstrapCarousel.split("\n");
+
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
