@@ -152,14 +152,14 @@ var projects = {
 
       if (i === 0) {
         indicators = indicators +
-          CarouselIndicators.replace(/%id%/gm, index).replace(/%index%/gm, i + 1).replace(/%active%/gm, 'class="active"') +
+          CarouselIndicators.replace(/%id%/gm, index).replace(/%index%/gm, i).replace(/%active%/gm, 'class="active"') +
           "\n";
         images = images +
           CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "active") +
           "\n";
       } else {
         indicators = indicators +
-          CarouselIndicators.replace(/%id%/gm, index).replace(/%index%/gm, i + 1).replace(/%active%/gm, '') +
+          CarouselIndicators.replace(/%id%/gm, index).replace(/%index%/gm, i).replace(/%active%/gm, '') +
           "\n";
         images = images +
           CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "") +
