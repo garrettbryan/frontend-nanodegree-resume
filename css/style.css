@@ -1,7 +1,6 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
 }
 
 .clearfix {
@@ -40,6 +39,10 @@ h4 {
   font-size: 14px;
   color: #4A4A4A;
   line-height: 17px;
+}
+
+h1, h2, h3, h4, h5, a , .orange-text{
+  font-family: 'Orbitron', sans-serif;
 }
 
 h2, h3, h4, h5 {
