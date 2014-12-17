@@ -23,9 +23,9 @@ var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectTitle = '<div class="row"><div class="col-md-6"><a href="#">%data%</a>';
+var HTMLprojectDates = '<div class="date-text">%data%</div></div><div class="col-md-6"></div></div>';
+var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImage = '<img class="project-img" src="%data%">';
 var HTMLcompleteprojectImage = '<img class="project-img" src="%data%" title="%title%" alt="%alt%">';
 
@@ -54,10 +54,10 @@ var CarouselImage = [
 '            %imgTitle%',
 '          </div>',
 '        </div>'
+//'        %imgTitle%'
 ].join("\n");
 
 var CarouselControls = [
-'        ...',
 '      </div>',
 '      <!-- Controls -->',
 '      <a class="left carousel-control" href="#carousel%id%" role="button" data-slide="prev">',

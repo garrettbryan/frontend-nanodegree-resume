@@ -134,23 +134,25 @@ var projects = {
       }
     }
   },
-  "carousel": function(project) {
+
+  "carousel": function(project, index) {
     var imageCount = project.images.length;
     var indicators = "",
-      images = "";
+      images = "",
+      control = "";
     console.log(imageCount);
     for (var i = 0; i < imageCount; i++) {
 
       if (i === 0) {
         indicators = indicators +
-          CarouselIndicators.replace(/%id%/gm, 1).replace(/%index%/gm, i + 1).replace(/%active%/gm, 'class="active"') +
+          CarouselIndicators.replace(/%id%/gm, index).replace(/%index%/gm, i + 1).replace(/%active%/gm, 'class="active"') +
           "\n";
         images = images +
           CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "active") +
           "\n";
       } else {
         indicators = indicators +
-          CarouselIndicators.replace(/%id%/gm, 1).replace(/%index%/gm, i + 1).replace(/%active%/gm, '') +
+          CarouselIndicators.replace(/%id%/gm, index).replace(/%index%/gm, i + 1).replace(/%active%/gm, '') +
           "\n";
         images = images +
           CarouselImage.replace(/%imgPath%/gm, project.images[i].path).replace(/%imgAlt%/gm, project.images[i].alt).replace(/%imgTitle%/gm, project.images[i].title).replace(/%active%/gm, "") +
@@ -160,570 +162,550 @@ var projects = {
 
 
     }
-    $("#projects").append(
-      CarouselStart.replace(/%id%/gm, 1) +
+    $("#projects").append(HTMLprojectStart);
+      $(".project-entry:last").append(
+        HTMLprojectTitle.replace("%data%", project.title) +
+        HTMLprojectDates.replace("%data%", project.dates)
+        //
+      );
+    $(".project-entry:last").append(
+      CarouselStart.replace(/%id%/gm, index) +
       indicators +
       CarouselImagesHead +
       images +
-      CarouselControls.replace(/%id%/gm, 1) +
-      CarouselDescription.replace("%data%", "Here is some more information!")
+      CarouselControls.replace(/%id%/gm, index) +
+      CarouselDescription.replace("%data%", HTMLprojectDescription.replace("%data%", project.description))
     );
-    /*
-        $(".col-md-6").append(carouselStart.replace("%id%",1));
-        $(".carousel:last").append(carouselIndicators).
-          append(carouselList).
-          append(carouselControl);
+  },
 
-        for (var i = 0, imageCount = project.length; i < imageCount; i++){
-          $(".carousel-indicators").append(
-            carouselIndicator.replace("%id%", 1).replace("%index%", i)
-          );
-          $(".carousel-inner").append(carouselItem);
-          $(".item").append(
-            carouselImage.replace("%imgPath%", project[i].path).
-            replace( "%imgAlt%", project[i].alt)
-          )
-          $(".item").append(
-            carouselTitle.replace("%imgTitle%", project[i].title));
-        }
-        $("li").first().addClass("active");
-        $(".item").first().addClass("active");
-
-    */
+  "carouselDisplayAll": function(){
+    for (var i = 0; i < projects.projects.length; i++){
+      projects.carousel(projects.projects[i], i);
+    }
   },
   "projects": [
     /*CURRENT PROJECTS*/
     {
       "title": "3D House Scan Parser",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "Have you ever had to extract a floorplan from the scan of a house? Well I did.",
+      "dates": "July 2014 - August 2014",
+      "description": "Have you ever had to extract a floorplan from the scan of a house? Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
         "path": "images/project_images/3D_model_parsing/3D_model_parsing1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "The algo searches the array for sequential, contiguous, and parallel faces and puts them into a data structure called a blob.",
+        "alt": "Highlighted tesselated subset of a house interior scan.",
       }, {
         "path": "images/project_images/3D_model_parsing/3D_model_parsing2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Subsequent passes then combine the blobs into surfaces.",
+        "alt": "Multiple highlighted tesselated subsets.",
       }, {
         "path": "images/project_images/3D_model_parsing/3D_model_parsing3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Further refinement of the comparison algo.",
+        "alt": "More refined highlighted tesslelated subset.",
       }, {
         "path": "images/project_images/3D_model_parsing/3D_model_parsing4.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Success! The floor, ceiling, walls and miscellaneous features can be separated from each other.",
+        "alt": "The floor of a house interior scan is highlighted.",
       }, {
-        "path": "images/project_images/3D_model_parsing/3D_model_parsing5.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/3D_model_parsing/3D_model_parsing5.jpg",
+        "title": "The floor plan is separated from the rest of the structure.",
+        "alt": "Highlighted floorplan on a black field.",
       }, ]
     }, {
       "title": "Libpourator",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "When I have free time.",
+      "description": "I think there is a need for a simple, safe, and economic way to a 3D print into a metal object. Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
         "path": "images/project_images/microwave_libpourator/microwave_libpourator_side.png",
-        "title": "",
-        "alt": ""
+        "title": "The Libpourator microwave furnace consists of a refractory monolith, with a susceptor crucible.",
+        "alt": "Side view of the libpourator refractory monolith and crucible.",
       }, {
         "path": "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section.png",
-        "title": "",
-        "alt": ""
+        "title": "The microwave will be placed onto its back, so that the door opens from the top, and the libpourator placed inside.",
+        "alt": "Side cross-section of the libpourator inside the microwave.",
       }, {
-        "path": "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section_pouring-position.png"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/microwave_libpourator/microwave_libpourator_side_cross-section_pouring-position.png",
+        "title": "When the melt reaches pour temp the entire microwave is tipped slowly onto it's side, causing the molten metal to fill the the investment mold.",
+        "alt": "Side cross-secton of the libpourator and microwave tipped into pour position.",
       }, ]
     }, {
       "title": "Open-Source Optical Pyrometer",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "When I have free time.",
+      "description": "For the libpourator to be effective, it needs to be controllable. Plaid Helvetica Tumblr cray. Jean shorts forage chillwave swag meditation gluten-free VHS, +1 meggings photo booth gastropub quinoa you probably haven't heard of them cornhole 3 wolf moon. Pickled American Apparel Bushwick tote bag sartorial, wayfarers Neutra Intelligentsia post-ironic. Messenger bag tofu small batch next level Truffaut, 8-bit shabby chic mixtape viral crucifix chambray organic PBR&B. Marfa hoodie ethical twee mumblecore viral bespoke, beard narwhal asymmetrical trust fund selfies. Pop-up tousled fanny pack salvia, gluten-free gastropub raw denim meditation. Yr quinoa seitan literally mlkshk High Life.",
       "images": [{
         "path": "images/project_images/spectrometer/spectrometer1.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/spectrometer/spectrometer2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Basically a box with an adjustable diffraction grating.",
+        "alt": "Open MDF box with lid, inside an adjustable diffraction grating.",
       }, {
         "path": "images/project_images/spectrometer/spectrometer3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "The raw photograph captured by the Raspberry Pi of a compact flourescent lightbulb spectrum.",
+        "alt": "Photograph of the diffraction grating and resulting spectrum inside the box.",
       }, {
         "path": "images/project_images/spectrometer/spectrometer4.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Red channel isolated.",
+        "alt": "Black and white photo.",
       }, {
         "path": "images/project_images/spectrometer/spectrometer5.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Green channel isolated.",
+        "alt": "Black and white photo.",
       }, {
         "path": "images/project_images/spectrometer/spectrometer6.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Blue channel isolated.",
+        "alt": "Black and white photo.",
       }, {
-        "path": "images/project_images/spectrometer/spectrometer7.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/spectrometer/spectrometer7.jpg",
+        "title": "Spectrum of a candle flame",
+        "alt": "Photograph of the diffraction grating and resulting spectrum inside the box.",
       }, ]
     }, {
       "title": "Handheld LTD Stirling Engine",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "When I have free time.",
+      "description": "One of my future castings. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Top",
+        "alt": "CAD drawing",
       }, {
         "path": "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Side",
+        "alt": "CAD drawing",
       }, {
         "path": "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Front",
+        "alt": "CAD drawing",
       }, {
-        "path": "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine4.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/handheld_ltd_stirling_engine/handheld_ltd_stirling_engine4.jpg",
+        "title": "3/4 view",
+        "alt": "CAD drawing",
       }, ]
     },
     /*COMPLETED PROJECTS*/
     {
       "title": "RepRap Mendel",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "2009",
+      "description": "My own handmade Mendel!!! Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/reprap_mendel/reprap_mendel1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Mendel nearly complete.",
+        "alt": "Front view of the nearly complete Mendel.",
       }, {
         "path": "images/project_images/reprap_mendel/reprap_mendel2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Heated build platform in place.",
+        "alt": "Front view of the nearly complete Mendel and heated build platform.",
       }, {
-        "path": "images/project_images/reprap_mendel/reprap_mendel3.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/reprap_mendel/reprap_mendel3.jpg",
+        "title": "Finished Mendel!",
+        "alt": "Complete Mendel with heated build platform installed printing an early print.",
       }, ]
     }, {
       "title": "RepRap Nozzle",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "June 2010",
+      "description": "The first nozzles I made for my 3D printer would ooze molten plastic from the side if enough pressure was exerted on the filament. So I made two new ones from an updated design. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "I shoved that teflon rod in a brass sleave and was able to drill that hole.",
+        "alt": "3.2mm hole in a 5mm rod",
       }, {
         "path": "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "The teflon tube runs the length of the brass nozzle and the PEEK insulator",
+        "alt": "Nozzle showing the placement of the teflon tube inside the PEEK insulator.",
       }, {
-        "path": "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/reprap_mendel_nozzle/reprap_mendel_nozzle3.jpg",
+        "title": "Always make a backup.",
+        "alt": "Two freshly machined nozzles standing next to each other.",
       }, ]
     }, {
       "title": "Initial RepRap Calibration",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "June 2010",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "The very first calibration cubes.",
+        "alt": "Sequence of calibration cubes.",
       }, {
         "path": "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Getting close.",
+        "alt": "Close-up of calibration cubes.",
       }, {
         "path": "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Printing the cube.",
+        "alt": "Close-up of the printer extruding the cube.",
       }, {
-        "path": "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration4.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/reprap_mendel_calibration/reprap_mendel_calibration4.jpg",
+        "title": "The final cube. A little thin on the infill.",
+        "alt": "Caliper measuring exactly 20.00mm calibration box.",
       }, ]
     }, {
       "title": "Ceramic Slip Casting",
-      "dates": "June 27, 1980 - sometime in the future",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "2008 - ",
+      "description": "Physics is so cool. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/slip_cast/slip_cast1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Mixing clay, water, sodium silicate, and sodium carbonate. This is deflocking the slip.",
+        "alt": "Mixer mixing a text batch of clay slip.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "After mixing and degassing, the slip is poured into the mold. In this case it is a large crucible.",
+        "alt": "Plaster of paris crucible mold filled to the top with slip.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Given enough time, the water in the slip is drawn into the plaster and the clay particles are deposited onto the mold face. Its like a giant filter.",
+        "alt": "Crucible is thick enough, poured remaining slip in to container.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast4.jpg",
-        "title": "",
-        "alt": ""
+        "title": "As the clay dries it shrinks, and pulls itself away from the walls of the mold.",
+        "alt": "Inside view of mold.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast5.jpg",
-        "title": "",
-        "alt": ""
+        "title": "The clay shrinks quite a bit and makes it very easy to remove.",
+        "alt": "Close-up of the ceramic separating from the mold.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast6.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Crucible ready for firing.",
+        "alt": "Crucible removed from the mold.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast7.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Small crucible and plinth for small furnace.",
+        "alt": "6\" crucible standing on a plinth.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast8.jpg",
-        "title": "",
-        "alt": ""
+        "title": "This piece used a rubber plug embedded into the mold to create the precise hole in the side.",
+        "alt": "Bowl shaped ceramic piece with a hole in the side.",
       }, {
         "path": "images/project_images/slip_cast/slip_cast9.jpg",
-        "title": "",
-        "alt": ""
+        "title": "This piece used a piece of lexan on the bottom of the mold to create the open section.",
+        "alt": "Three layer wedding cake shaped ceramic piece, open on top and bottom.",
       }, ]
     }, {
       "title": "Hole Tracer",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "Let's say you want a pipe to intersect another pipe at a precise position,\
-      with a certain offset and angle. How does the hole change as it is applied to different \
-      surfaces? This web app allows you to print out that trace tape it to the surface so you can\
-      cut that precise hole.",
+      "dates": "June 2008 - ",
+      "description": "Let's say you want a pipe to intersect another pipe at a precise position, with a certain offset and angle. How does the hole change as it is applied to different surfaces? This web app allows you to print out that trace tape it to the surface so you can cut that precise hole. XOXO lomo Godard, fap taxidermy butcher trust fund tousled Thundercats. Food truck leggings blog, heirloom aesthetic pug iPhone. Single-origin coffee kogi scenester American Apparel umami vinyl viral raw denim meh literally chia, banjo flannel. Tote bag mumblecore mustache four dollar toast. Lomo tousled aesthetic cliche iPhone, fixie letterpress shabby chic 3 wolf moon sustainable. Sriracha listicle art party, tote bag four dollar toast readymade blog PBR&B American Apparel. PBR&B Shoreditch freegan, leggings typewriter pickled cray hashtag wayfarers.",
       "images": [{
           "path": "images/project_images/hole_templates/hole_templates01.jpg",
-          "title": "",
-          "alt": ""
+          "title": "Different traces based on different offsets.",
+          "alt": "Three different teardrop traces.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates02.jpg",
-          "title": "",
-          "alt": ""
+          "title": "One trace applied to an empty freon cylinder.",
+          "alt": "The perspective shows that the teardrop shape becomes circular when viewed from a specific angle.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates03.jpg",
-          "title": "",
-          "alt": ""
+          "title": "Pipe is placed into furnace body while refractory is rammed.",
+          "alt": "Teardrop hole is cut and a pipe of appropriate size is inserted.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates04.jpg",
-          "title": "",
-          "alt": ""
+          "title": "After the refractory has dried the pipe can be removed.",
+          "alt": "Close up of furnace with refractory.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates05.jpg",
-          "title": "",
-          "alt": ""
+          "title": "The internal mold is removed.",
+          "alt": "The refractory has retained its shape.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates06.jpg",
-          "title": "",
-          "alt": ""
+          "title": "The internal mold included a teardrop hole to insert the pipe.",
+          "alt": "Internal mold showing how a pipe would align",
         }, {
           "path": "images/project_images/hole_templates/hole_templates07.jpg",
-          "title": "",
-          "alt": ""
+          "title": "The cylinder was not the best shape to use for this application.",
+          "alt": "Close-up of pipe intersecting internal mold.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates08.jpg",
-          "title": "",
-          "alt": ""
+          "title": "Trying to remove a cylinder from the casting is a pain. So I implemented a conical shape.",
+          "alt": "Conical shape with circle pattern on it..",
         }, {
           "path": "images/project_images/hole_templates/hole_templates09.jpg",
-          "title": "",
-          "alt": ""
+          "title": "Just a quick sanity check to see that the hole is somewhat circular.",
+          "alt": "Another conical shape.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates10.jpg",
-          "title": "",
-          "alt": ""
+          "title": "Output.",
+          "alt": "The printed output.",
         }, {
-          "path": "images/project_images/hole_templates/hole_templates11.jpg"
-          "title": "",
-          "alt": ""
+          "path": "images/project_images/hole_templates/hole_templates11.jpg",
+          "title": "Sanity check #2, the cylinder forms a right angle with the axis of the cone.",
+          "alt": "The printed output assembled.",
         },
 
       ]
     }, {
       "title": "Shrink Test - Aluminium",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "July 2009 - ",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/shrink_test_Al/shrink_test_Al1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al4.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al5.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/shrink_test_Al/shrink_test_Al6.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
-        "path": "images/project_images/shrink_test_Al/shrink_test_Al7.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/shrink_test_Al/shrink_test_Al7.jpg",
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, ]
     }, {
       "title": "Matchplate Pneumatic Vibrator",
-      "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "dates": "July 2009 - ",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator4.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator5.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator6.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator7.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator8.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
-        "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator9.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/pneumatic_vibrator/pneumatic_vibrator9.jpg",
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, ]
     }, {
       "title": "Casting Flask Hardware",
       "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/flask_hardware/flask_hardware01.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware02.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware03.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware04.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware05.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware06.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware07.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware08.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware09.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware10.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware11.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_hardware/flask_hardware12.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
-        "path": "images/project_images/flask_hardware/flask_hardware13.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/flask_hardware/flask_hardware13.jpg",
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, ]
     }, {
       "title": "Flask Pin Bushing V2",
       "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/flask_pin_bushing/flask_pin_bushing1.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_pin_bushing/flask_pin_bushing2.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/flask_pin_bushing/flask_pin_bushing3.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
-        "path": "images/project_images/flask_pin_bushing/flask_pin_bushing4.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/flask_pin_bushing/flask_pin_bushing4.jpg",
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, ]
     }, {
       "title": "Investment Metal Casting",
       "dates": "June 27, 1980 - sometime in the past",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/investment_casting/investment_casting01.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting02.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting03.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting04.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting05.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting06.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting07.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting08.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting09.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting10.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting11.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting12.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting13.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting14.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting15.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting16.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
-        "path": "images/project_images/investment_casting/investment_casting17.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/investment_casting/investment_casting17.jpg",
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, ]
     }, {
       "title": "Etching Aluminum Plate with HCl",
       "dates": "June 27, 1980 - sometime in the future",
-      "description": "A rock and a hardplace, mostly my own doing.",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/etching_Al_plate/etching_Al_plate01.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate02.jpg",
-        "title": "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate03.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate04.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate05.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate06.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate07.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate08.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate09.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
         "path": "images/project_images/etching_Al_plate/etching_Al_plate10.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, {
-        "path": "images/project_images/etching_Al_plate/etching_Al_plate11.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/etching_Al_plate/etching_Al_plate11.jpg",
+        "title": "Some test data.",
+        "alt": "Some test data.",
       }, ]
-    }, {
-      "path": "%img%",
-      "title": "%title%",
-      "alt": "%alt%"
     },
     /*FAILURES*/
     {
       "title": "Some Failures",
       "dates": "June 27, 1980 - sometime in the future",
-      "description": "A few of my notable failures:",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/failures/failures2.jpg",
         "title": "Over deflockulated ceramic slip being scraped out of a plaster mold.",
@@ -762,108 +744,84 @@ var projects = {
     {
       "title": "Adventuring",
       "dates": "June 27, 1980 - sometime in the future",
-      "description": "I always loved the outdoors and am always down for a hike that tests my limits.",
+      "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
         "path": "images/project_images/adventuring/adventuring01.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Canyoneering Angeles National Forest.",
+        "alt": "Garrett and three friends posing at trailhead.",
       }, {
         "path": "images/project_images/adventuring/adventuring02.jpg",
-        "title": "",
-        "alt": ""
+        "title": "250 foot rapel.",
+        "alt": "Canyoneer begining his rapel.",
       }, {
         "path": "images/project_images/adventuring/adventuring03.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Waterfall rapel.",
+        "alt": "Rapeling through a waterfall with a wetsuit.",
       }, {
         "path": "images/project_images/adventuring/adventuring04.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Ladybug mating season in Lytle Creek.",
+        "alt": "Thousands of ladybugs covering the trunk of a tree.",
       }, {
         "path": "images/project_images/adventuring/adventuring05.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Setting up for a rapel.",
+        "alt": "Garrett and friends posing at top of a precipice.",
       }, {
         "path": "images/project_images/adventuring/adventuring06.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Rapelling down a 10 foot culvert.",
+        "alt": "Inside a 10 foot culvert with a bight light at the end of the tunnel.",
       }, {
         "path": "images/project_images/adventuring/adventuring07.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Waterfall rapels are slippery.",
+        "alt": "Canyoneer sliping on a waterfall rapel.",
       }, {
         "path": "images/project_images/adventuring/adventuring08.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Jumping into a deeper than expected pool.",
+        "alt": "Garrett with water up to his chest.",
       }, {
         "path": "images/project_images/adventuring/adventuring09.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Half hour from LA.",
+        "alt": "Garrett and friends hiking out of the canyon.",
       }, {
         "path": "images/project_images/adventuring/adventuring10.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Awesome views of nature.",
+        "alt": "Clouds pouring down the Santa Monica Mountians.",
       }, {
-        "path": "images/project_images/adventuring/adventuring11.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/adventuring/adventuring11.jpg",
+        "title": "Early morning hiking.",
+        "alt": "Santa Monica Mountains at dawn.",
       }, ]
     }, {
       "title": "Lily Pearl Bryan",
       "dates": "April 17, 2013 - ",
-      "description": "Doing my part to raise our little girl into an intellegent, dynamic, confident, and independent woman.",
+      "description": "Doing my part to raise our little girl into an intellegent, dynamic, confident, and independent woman. XOXO lomo Godard, fap taxidermy butcher trust fund tousled Thundercats. Food truck leggings blog, heirloom aesthetic pug iPhone. Single-origin coffee kogi scenester American Apparel umami vinyl viral raw denim meh literally chia, banjo flannel. Tote bag mumblecore mustache four dollar toast. Lomo tousled aesthetic cliche iPhone, fixie letterpress shabby chic 3 wolf moon sustainable. Sriracha listicle art party, tote bag four dollar toast readymade blog PBR&B American Apparel. PBR&B Shoreditch freegan, leggings typewriter pickled cray hashtag wayfarers.",
       "images": [{
         "path": "images/project_images/lily/lily01.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/lily/lily02.jpg",
-        "title": "",
-        "alt": ""
+        "title": "My wife and daughter on Lily's first birthday.",
+        "alt": "Blowing out a candle on a cupcake.",
       }, {
         "path": "images/project_images/lily/lily03.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/lily/lily04.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Grandma's house.",
+        "alt": "Close-up of Lily's adorable face.",
       }, {
         "path": "images/project_images/lily/lily05.jpg",
-        "title": "",
-        "alt": ""
+        "title": "New car.",
+        "alt": "Lily in her pink car.",
       }, {
         "path": "images/project_images/lily/lily06.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/lily/lily07.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Sprinklers.",
+        "alt": "Lily playing with a sprinkler.",
       }, {
         "path": "images/project_images/lily/lily08.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Squishing through the mud during a summer shower.",
+        "alt": "Lily in a bright pink rain suit.",
       }, {
         "path": "images/project_images/lily/lily09.jpg",
-        "title": "",
-        "alt": ""
+        "title": "Masterpiece.",
+        "alt": "Lily posing with her apple tree painting.",
       }, {
-        "path": "images/project_images/lily/lily10.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/lily/lily11.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/lily/lily12.jpg",
-        "title": "",
-        "alt": ""
-      }, {
-        "path": "images/project_images/lily/lily13.jpg"
-        "title": "",
-        "alt": ""
+        "path": "images/project_images/lily/lily13.jpg",
+        "title": "Lily got a new pink rose hat.",
+        "alt": "Lily waving while wearing her new hat.",
       }, ]
     }
   ]
@@ -871,7 +829,7 @@ var projects = {
 
 work.display();
 education.display();
-projects.carousel(projects.projects[15]);
+projects.carouselDisplayAll();
 //projects.display();
 bio.display();
 
