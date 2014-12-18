@@ -21,6 +21,16 @@ var bio = {
     bio.displayContacts();
     bio.addSkills();
   },
+  "displayFooterContacts": function(){
+    for (var method in bio.contacts) {
+      console.log(bio.contacts[method]);
+      $("#footerContacts").append(HTMLcontactGeneric.replace("%data%", bio.contacts[method]).replace("%contact%", method));
+    }
+  },
+  "connect": function(){
+    var connection = $("#letsConnect > h2").html();
+    $("#letsConnect > h2").html('<a href="mailto:' + bio.contacts.email + '">' + connection + '</a>');
+  },
   "name": "Garrett Bryan",
   "role": "Web Developer and Entrepreneur",
   "contacts": {
@@ -71,7 +81,7 @@ var education = {
     for (school in education.schools) {
       $("#education").append(HTMLschoolStart);
       $(".education-entry:last").append(
-        HTMLschoolName.replace("%data%", education.schools[school].name) +
+        HTMLschoolName.replace("%data%", education.schools[school].name).replace("%url%", education.schools[school].url) +
         HTMLschoolDegree.replace("%data%", education.schools[school].degree) +
         HTMLschoolDates.replace("%data%", education.schools[school].dates) +
         HTMLschoolLocation.replace("%data%", education.schools[school].location) +
@@ -85,21 +95,21 @@ var education = {
     "degree": "drop-out",
     "majors": ["Material Science"],
     "dates": "Fall 2010 - Spring 2011",
-    "url": "ucla.edu"
+    "url": "http://www.ucla.edu"
   }, {
     "name": "Los Angeles City College",
     "location": "Los Angeles, CA",
     "degree": "Transfer Student",
     "majors": ["Material Science"],
     "dates": "omg",
-    "url": "lacitycollege.edu"
+    "url": "http://www.lacitycollege.edu"
   }, {
     "name": "Los Angeles Valley College",
     "location": "Valley Glen, CA",
     "degree": "Transfer Student",
     "majors": ["Material Science", "Cinema"],
     "dates": "omg",
-    "url": "lavc.edu"
+    "url": "http://www.lavc.edu"
   }],
   "onlineCourses": [{
     "title": "Front-End Developer Nanodegree",
@@ -114,7 +124,7 @@ var work = {
     for (job in work.jobs) {
       $("#workExperience").append(HTMLworkStart);
       $(".work-entry:last").append(
-        HTMLworkEmployer.replace("%data%", work.jobs[job].employer) +
+        HTMLworkEmployer.replace("%data%", work.jobs[job].employer).replace("%url%", work.jobs[job].url) +
         HTMLworkTitle.replace("%data%", work.jobs[job].title) +
         HTMLworkLocation.replace("%data%", work.jobs[job].location) +
         HTMLworkDates.replace("%data%", work.jobs[job].dates) +
@@ -127,19 +137,22 @@ var work = {
     "title": "Digital IO Operator",
     "location": "Burbank, CA",
     "dates": "July 2006 to November 2013",
-    "description": "Writing a lot of perl scripts. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "description": "Writing a lot of perl scripts. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "url": "http://www.fotokem.com/"
   }, {
     "employer": "Fotokem",
     "title": "Weekend Film Dailies Scheduler",
     "location": "Burbank, CA",
     "dates": "June 2005 to July 2006",
-    "description": "Schedule Film Processing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "description": "Schedule Film Processing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "url": "http://www.fotokem.com/"
   }, {
     "employer": "Los Angeles Valley College",
     "title": "Math Tutor",
     "location": "Valley Glen, CA",
     "dates": "2007",
-    "description": "2+2=4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "description": "2+2=4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "url": "http://www.lavc.edu/"
   }]
 };
 
@@ -152,7 +165,7 @@ var projects = {
       }
       $("#projects").append(HTMLprojectStart);
       $(".project-entry:last").addClass(classes).append(
-        HTMLprojectTitle.replace("%data%", projects.projects[j].title) +
+        HTMLprojectTitle.replace("%data%", projects.projects[j].title).replace("%url%", project.url) +
         HTMLprojectDates.replace("%data%", projects.projects[j].dates) +
         HTMLprojectDescription.replace("%data%", projects.projects[j].description)
       );
@@ -199,7 +212,7 @@ var projects = {
     }
     $("#projects").append(HTMLprojectStart);
     $(".project-entry:last").append(
-      HTMLprojectTitle.replace("%data%", project.title) +
+      HTMLprojectTitle.replace("%data%", project.title).replace("%url%", project.url) +
       HTMLprojectDates.replace("%data%", project.dates)
       //
     );
@@ -223,6 +236,7 @@ var projects = {
     /*CURRENT PROJECTS*/
     {
       "title": "House Interior Scan Parser",
+      "url": "linux_of_power_generation.html",
       "dates": "July 2014 - August 2014",
       "description": "Have you ever had to extract a floorplan from the scan of a house? Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
@@ -248,6 +262,7 @@ var projects = {
       }, ]
     }, {
       "title": "Libpourator",
+      "url": "linux_of_power_generation.html",
       "dates": "When I have free time.",
       "description": "I think there is a need for a simple, safe, and economic way to a 3D print into a metal object. Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
@@ -265,6 +280,7 @@ var projects = {
       }, ]
     }, {
       "title": "Open-Source Optical Pyrometer",
+      "url": "linux_of_power_generation.html",
       "dates": "When I have free time.",
       "description": "For the libpourator to be effective, it needs to be controllable. Plaid Helvetica Tumblr cray. Jean shorts forage chillwave swag meditation gluten-free VHS, +1 meggings photo booth gastropub quinoa you probably haven't heard of them cornhole 3 wolf moon. Pickled American Apparel Bushwick tote bag sartorial, wayfarers Neutra Intelligentsia post-ironic. Messenger bag tofu small batch next level Truffaut, 8-bit shabby chic mixtape viral crucifix chambray organic PBR&B. Marfa hoodie ethical twee mumblecore viral bespoke, beard narwhal asymmetrical trust fund selfies. Pop-up tousled fanny pack salvia, gluten-free gastropub raw denim meditation. Yr quinoa seitan literally mlkshk High Life.",
       "images": [{
@@ -294,6 +310,7 @@ var projects = {
       }, ]
     }, {
       "title": "Handheld LTD Stirling Engine",
+      "url": "linux_of_power_generation.html",
       "dates": "When I have free time.",
       "description": "One of my future castings. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -317,6 +334,7 @@ var projects = {
     /*COMPLETED PROJECTS*/
     {
       "title": "RepRap Mendel",
+      "url": "linux_of_power_generation.html",
       "dates": "2009",
       "description": "My own handmade Mendel!!! Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -334,6 +352,7 @@ var projects = {
       }, ]
     }, {
       "title": "RepRap Nozzle",
+      "url": "linux_of_power_generation.html",
       "dates": "June 2010",
       "description": "The first nozzles I made for my 3D printer would ooze molten plastic from the side if enough pressure was exerted on the filament. So I made two new ones from an updated design. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -351,6 +370,7 @@ var projects = {
       }, ]
     }, {
       "title": "Initial RepRap Calibration",
+      "url": "linux_of_power_generation.html",
       "dates": "June 2010",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -372,6 +392,7 @@ var projects = {
       }, ]
     }, {
       "title": "Ceramic Slip Casting",
+      "url": "linux_of_power_generation.html",
       "dates": "2008 - ",
       "description": "Interatomic forces are cool. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -413,6 +434,7 @@ var projects = {
       }, ]
     }, {
       "title": "Hole Tracer",
+      "url": "linux_of_power_generation.html",
       "dates": "June 2008 - ",
       "description": "Let's say you want a pipe to intersect another pipe at a precise position, with a certain offset and angle. How does the hole change as it is applied to different surfaces? This web app allows you to print out that trace tape it to the surface so you can cut that precise hole. XOXO lomo Godard, fap taxidermy butcher trust fund tousled Thundercats. Food truck leggings blog, heirloom aesthetic pug iPhone. Single-origin coffee kogi scenester American Apparel umami vinyl viral raw denim meh literally chia, banjo flannel. Tote bag mumblecore mustache four dollar toast. Lomo tousled aesthetic cliche iPhone, fixie letterpress shabby chic 3 wolf moon sustainable. Sriracha listicle art party, tote bag four dollar toast readymade blog PBR&B American Apparel. PBR&B Shoreditch freegan, leggings typewriter pickled cray hashtag wayfarers.",
       "images": [{
@@ -444,13 +466,9 @@ var projects = {
           "title": "The cylinder was not the best shape to use for this application.",
           "alt": "Close-up of pipe intersecting internal mold.",
         }, {
-          "path": "images/project_images/hole_templates/hole_templates08.jpg",
-          "title": "Trying to remove a cylinder from the casting is a pain. So I implemented a conical shape.",
-          "alt": "Conical shape with circle pattern on it..",
-        }, {
           "path": "images/project_images/hole_templates/hole_templates09.jpg",
-          "title": "Just a quick sanity check to see that the hole is somewhat circular.",
-          "alt": "Another conical shape.",
+          "title": "Trying to remove a cylinder from the casting is a pain. So I implemented a conical shape.",
+          "alt": "Conical shape instead of a cylinder.",
         }, {
           "path": "images/project_images/hole_templates/hole_templates10.jpg",
           "title": "Output.",
@@ -464,6 +482,7 @@ var projects = {
       ]
     }, {
       "title": "Shrink Test - Aluminium",
+      "url": "linux_of_power_generation.html",
       "dates": "July 2009 - ",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -493,6 +512,7 @@ var projects = {
       }, ]
     }, {
       "title": "Matchplate Pneumatic Vibrator",
+      "url": "linux_of_power_generation.html",
       "dates": "July 2009 - ",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -530,6 +550,7 @@ var projects = {
       }, ]
     }, {
       "title": "Casting Flask Hardware",
+      "url": "linux_of_power_generation.html",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -563,6 +584,7 @@ var projects = {
       }, ]
     }, {
       "title": "Cope Mount for Pin Bushing V2",
+      "url": "linux_of_power_generation.html",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -580,6 +602,7 @@ var projects = {
       }, ]
     }, {
       "title": "Investment Metal Casting",
+      "url": "linux_of_power_generation.html",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -587,12 +610,8 @@ var projects = {
         "title": "Plaster of Paris mold.",
         "alt": "Plaster mold curing.",
       }, {
-        "path": "images/project_images/investment_casting/investment_casting03.jpg",
-        "title": "Burning out the plastic.",
-        "alt": "Close-up of the mold showing plastic oozing.",
-      }, {
         "path": "images/project_images/investment_casting/investment_casting04.jpg",
-        "title": "Not time effective.",
+        "title": "Slowly melting out the plastic was not time effective.",
         "alt": "Close-up as before with slight discoloration of the of the plaster.",
       }, {
         "path": "images/project_images/investment_casting/investment_casting05.jpg",
@@ -629,6 +648,7 @@ var projects = {
       }, ]
     }, {
       "title": "Etching Aluminum Plate with HCl",
+      "url": "linux_of_power_generation.html",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -664,6 +684,7 @@ var projects = {
     /*FAILURES*/
     {
       "title": "Some Failures",
+      "url": "linux_of_power_generation.html",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -703,6 +724,7 @@ var projects = {
     /*CULTURAL FIT*/
     {
       "title": "Adventuring",
+      "url": "http://en.wikipedia.org/wiki/Mount_Everest",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -744,14 +766,11 @@ var projects = {
       }, {
         "path": "images/project_images/adventuring/adventuring10.jpg",
         "title": "Awesome views of nature.",
-        "alt": "Clouds pouring down the Santa Monica Mountians.",
-      }, {
-        "path": "images/project_images/adventuring/adventuring11.jpg",
-        "title": "Early morning hiking.",
-        "alt": "Santa Monica Mountains at dawn.",
+        "alt": "Clouds pouring down the Santa Monica Mountians."
       }, ]
     }, {
       "title": "Lily Pearl Bryan",
+      "url": "#",
       "dates": "April 17, 2013 - ",
       "description": "Doing my part to raise our little girl into an intellegent, dynamic, confident, and independent woman. XOXO lomo Godard, fap taxidermy butcher trust fund tousled Thundercats. Food truck leggings blog, heirloom aesthetic pug iPhone. Single-origin coffee kogi scenester American Apparel umami vinyl viral raw denim meh literally chia, banjo flannel. Tote bag mumblecore mustache four dollar toast. Lomo tousled aesthetic cliche iPhone, fixie letterpress shabby chic 3 wolf moon sustainable. Sriracha listicle art party, tote bag four dollar toast readymade blog PBR&B American Apparel. PBR&B Shoreditch freegan, leggings typewriter pickled cray hashtag wayfarers.",
       "images": [{
@@ -792,6 +811,8 @@ education.display();
 projects.carouselDisplayAll();
 //projects.display();
 bio.display();
+bio.displayFooterContacts();
+bio.connect();
 navs.display();
 
 

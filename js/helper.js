@@ -5,8 +5,8 @@ var col6 = '<div class="col-md-6"></div>';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
-var HTMLnav = '<div class="nav"><ul></ul></div>';
-var HTMLnavLink = '<li><a href="%path%">%title%</a></li>';
+var HTMLnav = '<div class="nav"><ul class="flex-box"></ul></div>';
+var HTMLnavLink = '<li class="flex-item"><a href="%path%">%title%</a></li>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -23,14 +23,14 @@ var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills"
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkEmployer = '<a href="%url%">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<div class="row"><div class="col-md-6"><a href="#">%data%</a>';
+var HTMLprojectTitle = '<div class="row"><div class="col-md-6"><a href="%url%">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div></div><div class="col-md-6"></div></div>';
 var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImage = '<img class="project-img" src="%data%">';
@@ -71,7 +71,7 @@ var CarouselControls = [
 '        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
 '        <span class="sr-only">Previous</span>',
 '      </a>',
-'      <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">',
+'      <a class="right carousel-control" href="#carousel%id%" role="button" data-slide="next">',
 '        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
 '        <span class="sr-only">Next</span>',
 '      </a>',
@@ -89,7 +89,7 @@ var CarouselDescription = [
 
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="%url%">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
