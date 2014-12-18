@@ -10,5 +10,3 @@ http://www.google.com/fonts#
 Bootstrap carousel
 http://getbootstrap.com/javascript/#carousel
 
-D3
-http://bl.ocks.org/mbostock/3883245#data.tsv
