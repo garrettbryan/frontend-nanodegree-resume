@@ -92,7 +92,7 @@ var education = {
   "schools": [{
     "name": "UCLA",
     "location": "Los Angeles, CA",
-    "degree": "drop-out",
+    "degree": "",
     "majors": ["Material Science"],
     "dates": "Fall 2010 - Spring 2011",
     "url": "http://www.ucla.edu"
