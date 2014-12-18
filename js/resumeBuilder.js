@@ -35,24 +35,33 @@ var bio = {
   "skills": ["JavaScript", "jQuery", "CSS", "HTML", "MongoDB", "Git and Github", "Perl", "AJAX", "TDD"]
 };
 
-var nav = {
+var navs = {
   "display": function() {
-    for (nav in nav.endPoints){
-
+    $('#header > hr').after(row);
+    $('#header > .row').append(col6 + col6);
+    $('#header > .row > div').last().append(HTMLnav);
+    for (var nav in navs.endPoints){
+      $('div.nav > ul').append(HTMLnavLink.replace(
+        "%path%", navs.endPoints[nav].path).replace(
+        "%title%", navs.endPoints[nav].title));
     }
   },
   "endPoints": [
   {
-    "blog": "blog.html"
+    "title": "blog",
+    "path": "index.html"
   },
   {
-    "work": "work.html"
+    "title": "work",
+    "path": "work.html"
   },
   {
-    "projects": "projects.html"
+    "title": "projects",
+    "path": "projects.html"
   },
   {
-    "resume": "resume.html"
+    "title": "resume",
+    "path": "resume.html"
   }
   ]
 }
@@ -783,7 +792,7 @@ education.display();
 projects.carouselDisplayAll();
 //projects.display();
 bio.display();
-
+navs.display();
 
 
 function locationizer(work) {

@@ -1,7 +1,12 @@
 
-var HTMLheaderRow = '<div class=""'
+var row = '<div class="row"></div>';
+var col6 = '<div class="col-md-6"></div>';
+
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
+var HTMLheaderRole = '<span>%data%</span><hr>';
+
+var HTMLnav = '<div class="nav"><ul></ul></div>';
+var HTMLnavLink = '<li><a href="%path%">%title%</a></li>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
