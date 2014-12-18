@@ -2,6 +2,8 @@
 var row = '<div class="row"></div>';
 var col6 = '<div class="col-md-6"></div>';
 
+var construction = '<h1 class="flex-item"> Under Construction </h1>';
+
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 

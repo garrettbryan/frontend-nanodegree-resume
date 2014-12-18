@@ -58,20 +58,20 @@ var navs = {
   },
   "endPoints": [
   {
-    "title": "blog",
+    "title": "resume",
     "path": "index.html"
   },
   {
     "title": "work",
-    "path": "work.html"
+    "path": "under_construction.html"
   },
   {
     "title": "projects",
-    "path": "projects.html"
+    "path": "under_construction.html"
   },
   {
-    "title": "resume",
-    "path": "resume.html"
+    "title": "blog",
+    "path": "under_construction.html"
   }
   ]
 }
@@ -236,7 +236,7 @@ var projects = {
     /*CURRENT PROJECTS*/
     {
       "title": "House Interior Scan Parser",
-      "url": "linux_of_power_generation.html",
+      "url": "https://github.com/garrettbryan/de-constructor",
       "dates": "July 2014 - August 2014",
       "description": "Have you ever had to extract a floorplan from the scan of a house? Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
@@ -262,7 +262,7 @@ var projects = {
       }, ]
     }, {
       "title": "Libpourator",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "When I have free time.",
       "description": "I think there is a need for a simple, safe, and economic way to a 3D print into a metal object. Paleo irony literally 90's, +1 heirloom roof party wolf Tumblr Williamsburg. Neutra cred 8-bit next level butcher Austin, locavore kogi cold-pressed. Taxidermy Intelligentsia vinyl XOXO jean shorts, Banksy migas McSweeney's readymade ugh craft beer chia hashtag. Direct trade lomo vegan, meh McSweeney's butcher master cleanse Godard meggings. Odd Future shabby chic direct trade, fanny pack mlkshk readymade VHS. Heirloom High Life whatever, Vice art party VHS ugh. Squid letterpress twee Pinterest gluten-free Tumblr.",
       "images": [{
@@ -280,7 +280,7 @@ var projects = {
       }, ]
     }, {
       "title": "Open-Source Optical Pyrometer",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "When I have free time.",
       "description": "For the libpourator to be effective, it needs to be controllable. Plaid Helvetica Tumblr cray. Jean shorts forage chillwave swag meditation gluten-free VHS, +1 meggings photo booth gastropub quinoa you probably haven't heard of them cornhole 3 wolf moon. Pickled American Apparel Bushwick tote bag sartorial, wayfarers Neutra Intelligentsia post-ironic. Messenger bag tofu small batch next level Truffaut, 8-bit shabby chic mixtape viral crucifix chambray organic PBR&B. Marfa hoodie ethical twee mumblecore viral bespoke, beard narwhal asymmetrical trust fund selfies. Pop-up tousled fanny pack salvia, gluten-free gastropub raw denim meditation. Yr quinoa seitan literally mlkshk High Life.",
       "images": [{
@@ -310,7 +310,7 @@ var projects = {
       }, ]
     }, {
       "title": "Handheld LTD Stirling Engine",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "When I have free time.",
       "description": "One of my future castings. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -334,7 +334,7 @@ var projects = {
     /*COMPLETED PROJECTS*/
     {
       "title": "RepRap Mendel",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "2009",
       "description": "My own handmade Mendel!!! Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -352,7 +352,7 @@ var projects = {
       }, ]
     }, {
       "title": "RepRap Nozzle",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 2010",
       "description": "The first nozzles I made for my 3D printer would ooze molten plastic from the side if enough pressure was exerted on the filament. So I made two new ones from an updated design. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -370,7 +370,7 @@ var projects = {
       }, ]
     }, {
       "title": "Initial RepRap Calibration",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 2010",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -392,7 +392,7 @@ var projects = {
       }, ]
     }, {
       "title": "Ceramic Slip Casting",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "2008 - ",
       "description": "Interatomic forces are cool. Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -434,7 +434,7 @@ var projects = {
       }, ]
     }, {
       "title": "Hole Tracer",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 2008 - ",
       "description": "Let's say you want a pipe to intersect another pipe at a precise position, with a certain offset and angle. How does the hole change as it is applied to different surfaces? This web app allows you to print out that trace tape it to the surface so you can cut that precise hole. XOXO lomo Godard, fap taxidermy butcher trust fund tousled Thundercats. Food truck leggings blog, heirloom aesthetic pug iPhone. Single-origin coffee kogi scenester American Apparel umami vinyl viral raw denim meh literally chia, banjo flannel. Tote bag mumblecore mustache four dollar toast. Lomo tousled aesthetic cliche iPhone, fixie letterpress shabby chic 3 wolf moon sustainable. Sriracha listicle art party, tote bag four dollar toast readymade blog PBR&B American Apparel. PBR&B Shoreditch freegan, leggings typewriter pickled cray hashtag wayfarers.",
       "images": [{
@@ -482,7 +482,7 @@ var projects = {
       ]
     }, {
       "title": "Shrink Test - Aluminium",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "July 2009 - ",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -512,7 +512,7 @@ var projects = {
       }, ]
     }, {
       "title": "Matchplate Pneumatic Vibrator",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "July 2009 - ",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -550,7 +550,7 @@ var projects = {
       }, ]
     }, {
       "title": "Casting Flask Hardware",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -584,7 +584,7 @@ var projects = {
       }, ]
     }, {
       "title": "Cope Mount for Pin Bushing V2",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -602,7 +602,7 @@ var projects = {
       }, ]
     }, {
       "title": "Investment Metal Casting",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 27, 1980 - sometime in the past",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -648,7 +648,7 @@ var projects = {
       }, ]
     }, {
       "title": "Etching Aluminum Plate with HCl",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
@@ -684,7 +684,7 @@ var projects = {
     /*FAILURES*/
     {
       "title": "Some Failures",
-      "url": "linux_of_power_generation.html",
+      "url": "under_construction.html",
       "dates": "June 27, 1980 - sometime in the future",
       "description": "Selfies biodiesel forage blog, seitan DIY heirloom cold-pressed tattooed twee Pitchfork paleo. Chambray scenester iPhone occupy Intelligentsia butcher. Art party lumbersexual cred locavore. Cray tofu sartorial Bushwick actually aesthetic, pug post-ironic keffiyeh scenester gluten-free. Pop-up XOXO letterpress typewriter. Quinoa kogi selfies put a bird on it narwhal organic. Keffiyeh four loko shabby chic forage craft beer seitan beard, viral cornhole taxidermy vegan freegan chambray sartorial.",
       "images": [{
